@@ -92,7 +92,7 @@ body{
 			ul#nav li a:hover{ color:#444; }
 			ul#nav li a.active{ color:#444; }
 			
-	#content{ background:url(images/bg-content.png) repeat-y top left; padding:30px 40px 30px 40px; }
+	#content{ background:url(images/bg-content.png) repeat-y top left; padding:30px 20px 30px 40px; }
 		
 	#footer{ background:url(images/bg-footer.png) no-repeat bottom left; padding:0px 40px 30px 40px; height:80px;  }
 		
