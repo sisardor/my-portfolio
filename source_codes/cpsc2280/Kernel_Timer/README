@@ -1,0 +1,56 @@
+==============================================
+ Author	: Sardor Isakov
+ Lab	: 4
+ CPSC 2280
+ ===============================================
+
+
+Assignment: [lab4] 
+---------- 
+Kernel Timer 
+
+
+Description:  
+----------- 
+C implementation of UNIX simple shell
+
+
+Included Files:
+--------------
+My assignment solution consists of the following files: 
+- ktimer.c 
+- ktimerfunc.h 
+- ktimer.h 
+- makefile
+
+
+Running my solution: 
+------------------- 
+You can run my assignment as follows: 
+> make run ARGS=[integer]
+or
+> ./ktimer [integer] 
+
+
+Compiler:  
+------------ 
+gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)
+
+
+Assumptions: 
+----------- 
+My program can't handle large fibonacci numbers
+
+
+Conclusions/Remarks: 
+------------------- 
+I had some problem implementing gettimeofday function, but resolved it later on
+
+Errors/Bugs: 
+----------- 
+I am not sure bugs are there, so far it worked OK. But for large fibonacci numbers, it went to infinit loop or something
+
+
+Additional Tools Used:
+---------------------
+All program and libraries are on Ubuntu
