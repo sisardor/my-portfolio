@@ -1,0 +1,3 @@
+//part B answer
+
+After modifying BSIZE, I noticed that producer fills up the buffer when you give sleep(0), it access the buffer recursivly for several times until buffer is full. And after tath consumer take over consumes the items, and same way consumer read from buffer until emptys it.
