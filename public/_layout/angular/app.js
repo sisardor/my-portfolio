@@ -56,8 +56,25 @@
         description:'Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.', 
         image:'_content/216x141-placeholder.jpg',
         link:'I am an <code>HTML</code>string with <a href="#">links!</a> and other <em>stuff</em>'
+      },
+      {
+        id:'item6',
+        title:'Lorem ipsum dolor',
+        description:'Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.', 
+        image:'_content/216x141-placeholder.jpg',
+        link:'I am an <code>HTML</code>string with <a href="#">links!</a> and other <em>stuff</em>'
       }
     ];
+    $scope.pagination = [];
+    var itemPerPage = 3;
+
+    var div = ~~(tmp.length/itemPerPage);
+    var rem = tmp.length % itemPerPage;
+    var totalPages = div + (rem ? 1:0);
+    for (var i = 1; i < totalPages + 1; i++) {
+      $scope.pagination.push({page:i});
+    };
+ 
 
     var page = $route.current.params.num || 1;
     $scope.currentPage = function(num){
@@ -65,7 +82,7 @@
     };
 
     $scope.projects = [];
-    var itemPerPage = 3;
+
     var ii = page * itemPerPage;
     for (var i = ii-itemPerPage; i < ii; i++) {
       if(i > tmp.length - 1 ) {

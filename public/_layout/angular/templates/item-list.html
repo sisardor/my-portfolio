@@ -13,9 +13,10 @@
 	<div class="portfolio-pagination col-1 clear">
 		<ul>
 			<!-- <li><a href="#">&laquo; Prev</a></li> -->
-			<li><a href="#/" 	   ng-class="{'active':currentPage(1)}">1</a></li>
+			<li ng-repeat="page in pagination"><a href="#/page/{{page.page}}" 	   ng-class="{'active':currentPage(page.page)}">{{page.page}}</a></li>
+			<!-- <li><a href="#/" 	   ng-class="{'active':currentPage(1)}">1</a></li>
 			<li><a href="#/page/2" ng-class="{'active':currentPage(2)}">2</a></li>
-			<li><a href="#/page/3" ng-class="{'active':currentPage(3)}">3</a></li>
+			<li><a href="#/page/3" ng-class="{'active':currentPage(3)}">3</a></li> -->
 			<!-- <li><a href="#/page/1">Next &raquo;</a></li> -->
 		</ul>
 	</div><!-- end portfolio-pagination -->		
