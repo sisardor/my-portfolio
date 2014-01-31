@@ -3,8 +3,8 @@
 # Lab:		lab 10
 # Name:		hangman.sh
 # Description:	This is system monitor script
-array0=( 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) # array for CPU usage graph
-array1=( 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 ) # array for Memory usage graph
+array0=( 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0) # array for CPU usage graph
+array1=( 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0) # array for Memory usage graph
 tput civis
 tput cup 0 0
 tput ed
@@ -84,6 +84,17 @@ function print_top5() {
 	printf "%5s %-8s %s %4s %4s  %-10s\n" ${TOP5[@]:24:6}`tput el`
 }
 
+function print_stars() {
+	if ((i >= $1)); then
+		echo -ne "\e[32m* \e[0m" # print green
+	elif ((i == 1)); then
+		echo -ne "\e[33m* \e[0m" # print yellow
+	else
+		echo -ne "\e[31m* \e[0m" # print red
+	fi
+}
+
+
 # print_array() function called from MAIN controller
 # and it will print CPU or MEMORY graphe, depending to argument passed to it
 # this function is called as following
@@ -96,16 +107,23 @@ print_array() {
 	let a=100
 	for ((i=0; i<5; i++))
 	do
-		for ((j=1; j<26; j++))
+		echo -n ""
+		if ((i >= 2)); then
+			OUTPUT= "*  "
+		else
+			OUTPUT= "\e[31m*  \e[0m";
+		fi
+
+		for ((j=1; j<35; j++))
 		do
 			if ((${array[j]} == 0)); then
-				echo -n ".  "
+				echo -n "  "
 			elif ((${array[j]} >= $a)); then
-				echo -n "*  "
+				print_stars i
 			elif ((${array[j]} >= $a-19)); then
-				echo -n "*  "
+				print_stars i
 			else
-				echo -n ".  "		
+				echo -n "  "		
 			fi
 		done; echo
 	let a=a-20
@@ -151,7 +169,7 @@ do
     	esac
 	
 	# Displaying header sectin of this program
-	echo `date +%r`"  CPU time: $DIFF_USAGE_UNITS.$DIFF_USAGE_DECIMAL%  Memory: ${_MEM[1]} total, ${_MEM[3]} free"
+	echo `date +%r`"  CPU time: $DIFF_USAGE_UNITS.$DIFF_USAGE_DECIMAL%  Memory: ${_MEM[1]} total, ${_MEM[3]} free       "
 	
 	# if 'C' (CPU) option is selected then start displaying CPU usage graph
 	if (($C))
