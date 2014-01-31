@@ -7,18 +7,16 @@
 		</a>
 		<br />
 		<h2>{{item.title}}</h2>
-		<p>{{item.description}}</p>
+		<p>{{item.description}} <br><span ng-bind-html="item.link"></span></p>
 		<p><a ng-href="#/project/{{item.id}}" class="read-more">Read More</a></p>
 	</div><!-- end .portfolio-item -->
 	<div class="portfolio-pagination col-1 clear">
 		<ul>
-			<li><a href="#">&laquo; Prev</a></li>
-			<li><a href="#" class="active">1</a></li>
-			<li><a href="#">2</a></li>
-			<li><a href="#">3</a></li>
-			<li><a href="#">4</a></li>
-			<li><a href="#">5</a></li>
-			<li><a href="#">Next &raquo;</a></li>
+			<!-- <li><a href="#">&laquo; Prev</a></li> -->
+			<li><a href="#/" 	   ng-class="{'active':currentPage(1)}">1</a></li>
+			<li><a href="#/page/2" ng-class="{'active':currentPage(2)}">2</a></li>
+			<li><a href="#/page/3" ng-class="{'active':currentPage(3)}">3</a></li>
+			<!-- <li><a href="#/page/1">Next &raquo;</a></li> -->
 		</ul>
 	</div><!-- end portfolio-pagination -->		
 </div><!-- end #portfolio -->
