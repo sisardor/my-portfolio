@@ -65,6 +65,7 @@
         link:'I am an <code>HTML</code>string with <a href="#">links!</a> and other <em>stuff</em>'
       }
     ];
+    $scope.projects = [];
     $scope.pagination = [];
     var itemPerPage = 3;
 
@@ -81,7 +82,7 @@
       return (num == page);
     };
 
-    $scope.projects = [];
+    
 
     var ii = page * itemPerPage;
     for (var i = ii-itemPerPage; i < ii; i++) {
