@@ -84,10 +84,11 @@ function print_top5() {
 	printf "%5s %-8s %s %4s %4s  %-10s\n" ${TOP5[@]:24:6}`tput el`
 }
 
+# print stars in 3 colours red, yellow, and green 
 function print_stars() {
-	if ((i >= $1)); then
+	if (($1 >= 2)); then
 		echo -ne "\e[32m* \e[0m" # print green
-	elif ((i == 1)); then
+	elif (($1 == 1)); then
 		echo -ne "\e[33m* \e[0m" # print yellow
 	else
 		echo -ne "\e[31m* \e[0m" # print red
@@ -107,12 +108,6 @@ print_array() {
 	let a=100
 	for ((i=0; i<5; i++))
 	do
-		echo -n ""
-		if ((i >= 2)); then
-			OUTPUT= "*  "
-		else
-			OUTPUT= "\e[31m*  \e[0m";
-		fi
 
 		for ((j=1; j<35; j++))
 		do
