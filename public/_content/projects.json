@@ -1,0 +1,51 @@
+[
+      {
+        "id":"item1",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      },
+      {
+        "id":"item2",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      },
+      {
+        "id":"item3",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      },
+      {
+        "id":"item4",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      },
+      {
+        "id":"item5",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      },
+      {
+        "id":"item6",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      },
+      {
+        "id":"item7",
+        "title":"Lorem ipsum dolor",
+        "description":"Etiam vitae justo ut felis ultrices placerat. Mauris dictum tellus ac dui bibendum at viverra augue iaculis. Praesent accumsan purus id ante.", 
+        "image":"_content/216x141-placeholder.jpg",
+        "link":"I am an <code>HTML</code>string with <a href='#'>links!</a> and other <em>stuff</em>"
+      }
+]
