@@ -1,38 +1,38 @@
-
 <h2 class="title">Portfolio</h2>
 <div >
-		    <ul class="button-group">
-				<li><button class="button" ng-click="setSelectedTitle('js')" ng-model="checkModel.js" btn-checkbox>JavaScritp</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('php')" ng-model="checkModel.php" btn-checkbox>PHP</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('angular')" ng-model="checkModel.angular" btn-checkbox>Angularjs</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('cplus')" ng-model="checkModel.cplus" btn-checkbox>C/C++</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('java')" ng-model="checkModel.java" btn-checkbox>Java</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('nodejs')" ng-model="checkModel.nodejs" btn-checkbox>Nodejs</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('api')" ng-model="checkModel.api" btn-checkbox>API</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('ror')" ng-model="checkModel.ror" btn-checkbox>ROR</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('mysql')" ng-model="checkModel.mysql" btn-checkbox>MySQL</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('android')" ng-model="checkModel.android" btn-checkbox>Android</button></li>
-				<li><button class="button" ng-click="setSelectedTitle('ios')" ng-model="checkModel.ios" btn-checkbox>iOS</button></li>
-			</ul>
-		    
-		</div>
-		<br>
+   <ul class="button-group">
+      <li><button class="button" ng-click="setSelectedTitle('js')" ng-model="checkModel.js" btn-checkbox>JavaScritp</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('php')" ng-model="checkModel.php" btn-checkbox>PHP</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('angular')" ng-model="checkModel.angular" btn-checkbox>Angularjs</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('cplus')" ng-model="checkModel.cplus" btn-checkbox>C/C++</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('java')" ng-model="checkModel.java" btn-checkbox>Java</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('nodejs')" ng-model="checkModel.nodejs" btn-checkbox>Nodejs</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('api')" ng-model="checkModel.api" btn-checkbox>API</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('ror')" ng-model="checkModel.ror" btn-checkbox>ROR</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('mysql')" ng-model="checkModel.mysql" btn-checkbox>MySQL</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('android')" ng-model="checkModel.android" btn-checkbox>Android</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('ios')" ng-model="checkModel.ios" btn-checkbox>iOS</button></li>
+   </ul>
+</div>
+<br>
 <div id="portfolio" class="fixed">
-
-	<div ng-repeat="item in projects" class="portfolio-item col-3 float-left padded-right">
-		<a href="_content/640x550-placeholder.jpg" class="bordered" rel="prettyPhoto[portfolio]">
-			<img ng-src="{{item.image}}" width="216" height="141" alt="" />					
-		</a>
-		<br />
-		<h2>{{item.title}}</h2>
-		<p>{{item.description}} <br><span ng-bind-html="item.link"></span></p>
-		<p><a ng-href="#/project/{{item.id}}" class="read-more">Read More</a></p>
-	</div><!-- end .portfolio-item -->
-	<div class="portfolio-pagination col-1 clear">
-		<ul>
-			<!-- <li><a href="#">&laquo; Prev</a></li> -->
-			<li ng-repeat="page in pagination"><a href="#/page/{{page.page}}" ng-class="{'active':currentPage(page.page)}">{{page.page}}</a></li>
-			<!-- <li><a href="#/page/1">Next &raquo;</a></li> -->
-		</ul>
-	</div><!-- end portfolio-pagination -->		
-</div><!-- end #portfolio -->
+   <div ng-repeat="item in projects" class="portfolio-item col-3 float-left padded-right">
+      <a href="_content/640x550-placeholder.jpg" class="bordered" rel="prettyPhoto[portfolio]">
+      <img ng-src="{{item.image}}" width="216" height="141" alt="" />					
+      </a>
+      <br />
+      <h2>{{item.title}}</h2>
+      <p>{{item.description}} <br><span ng-bind-html="item.link"></span></p>
+      <p><a ng-href="#/project/{{item.id}}" class="read-more">Read More</a></p>
+   </div>
+   <!-- end .portfolio-item -->
+   <div class="portfolio-pagination col-1 clear">
+      <ul>
+         <!-- <li><a href="#">&laquo; Prev</a></li> -->
+         <li ng-repeat="page in pagination"><a href="#/page/{{page.page}}" ng-class="{'active':currentPage(page.page)}">{{page.page}}</a></li>
+         <!-- <li><a href="#/page/1">Next &raquo;</a></li> -->
+      </ul>
+   </div>
+   <!-- end portfolio-pagination -->		
+</div>
+<!-- end #portfolio -->

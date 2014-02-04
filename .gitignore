@@ -5,3 +5,5 @@ png*
 public/_layout/js
 public/_layout/php
 read-me-first.txt
+public/tmp/*
+public/node_modules/*
