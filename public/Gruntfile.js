@@ -14,7 +14,7 @@ module.exports = function(grunt) {
 					'_layout/js/tipsy/jquery.tipsy.js',
 					'_layout/js/prettyphoto/jquery.prettyPhoto.js'
 				],
-				dest : 'tmp/test.js'
+				dest : 'tmp/script.js'
 			},
 			css: {
 				src  : [
@@ -22,17 +22,17 @@ module.exports = function(grunt) {
 						'_layout/js/tipsy/css.tipsy.css',
 						'_layout/js/prettyphoto/css.prettyPhoto.css',
 						],
-				dest : 'tmp/test.css'
+				dest : 'tmp/tmp.css'
 			},
 			extras: {
 				src  : [
-						'tmp/src/jquery.min.js',
-						'tmp/src/angular.min.js',
-						'tmp/src/angular-animate.min.js',
-						'tmp/src/angular-route.min.js',
-						'tmp/src/angular-touch.min.js',
-						'tmp/src/angular-sanitize.min.js',
-						'tmp/src/TweenMax.min.js',
+						'tmp/downloads/jquery.min.js',
+						'tmp/downloads/angular.min.js',
+						'tmp/downloads/angular-animate.min.js',
+						'tmp/downloads/angular-route.min.js',
+						'tmp/downloads/angular-touch.min.js',
+						'tmp/downloads/angular-sanitize.min.js',
+						'tmp/downloads/TweenMax.min.js',
 						'_layout/angular/app.js'
 						],
 				dest : 'tmp/uzlist-angular.js'
@@ -48,8 +48,8 @@ module.exports = function(grunt) {
 	        banner: '/*! <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> */\n'
 	      },
 		  js: {
-		    src: ['tmp/uzlist-angular.js','tmp/test.js'],
-		    dest: 'tmp/MAIN.js'
+		    src: ['tmp/uzlist-angular.js','tmp/script.js'],
+		    dest: 'dist/js/script.min.js'
 		  },
 		 //  extras: {
 			// 	src  : ['public/assets/build/js/uzlist-angular.js'],
@@ -67,7 +67,7 @@ module.exports = function(grunt) {
 		      banner: '/* <%= pkg.name %> <%= grunt.template.today("dd-mm-yyyy") %> Все права защишены. */\n'
 		    },
 		    files: {
-		      'tmp/test.min.css': ['tmp/test.css'],
+		      'dist/css/style.min.css': ['tmp/tmp.css'],
 		    }
 		  }
 		},
@@ -85,8 +85,16 @@ module.exports = function(grunt) {
 						'http://code.angularjs.org/1.2.9/angular-sanitize.min.js',
 						'http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js'
 					],
-				dest : 'tmp/src/'
+				dest : 'tmp/downloads/'
 			}
+		},
+		copy: {
+		  main: {
+		    files: [
+		      // flattens results to a single level
+		      {expand: true, flatten: true, src: ['_layout/images/**'], dest: 'dist/css/images', filter: 'isFile'}
+		    ]
+		  }
 		},
 		env : {
 		    options : {
@@ -105,12 +113,12 @@ module.exports = function(grunt) {
 
 		    dev : {
 
-		        src : 'javascripts_template.html',
-		        dest : 'app/views/partials/javascripts.php',
+		        src : '_layout/javascripts_template.html',
+		        dest : 'portfolio.html',
 		        options : {
 		            context : {
-		                name : '<%= pkg.name %>',
-		                app_version : '<%= pkg.app_version %>'
+		                jsname : 'script.min.js',
+		                cssname:'style.min.css'
 		            }
 		        }
 
@@ -149,7 +157,7 @@ module.exports = function(grunt) {
 		        }
 		    }
 		},
-		clean:  ["public/assets/build/css/", "public/assets/build/js/","public/src/vendor/"],
+		clean:  ["tmp/"],
 		
 	});
 
@@ -161,14 +169,15 @@ module.exports = function(grunt) {
 	grunt.loadNpmTasks('grunt-preprocess');
 	grunt.loadNpmTasks('grunt-env');
 	grunt.loadNpmTasks('grunt-contrib-clean');
+	grunt.loadNpmTasks('grunt-contrib-copy');
 
-	// load a custom task
-	grunt.loadTasks('grunt_tasks');
+	// load 	a custom task
+	//grunt.loadTasks('grunt_tasks');
 
 	// concat all files
-	grunt.registerTask('default', ['curl-dir','concat','cssmin','uglify']);
+	grunt.registerTask('default', ['curl-dir','concat','cssmin','uglify','copy','clean','preprocess:dev']);
 
-	// grunt.registerTask('dev', [ 'clean','env:dev', 'preprocess:dev','preprocess:dev_css']);
+	grunt.registerTask('dev', ['env:dev','preprocess:dev']);
 
-	// grunt.registerTask('prod', [ 'clean','env:prod', 'curl-dir','concat','uglify','cssmin','env:prod', 'preprocess:prod', 'preprocess:prod_css']);
+	grunt.registerTask('prod', ['env:prod','curl-dir','concat','cssmin','uglify','copy','clean','preprocess:dev']);
 }

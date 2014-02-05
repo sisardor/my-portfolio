@@ -17,114 +17,6 @@
 	<!-- //////// Css StyleSheets ////////  -->
 	<link href="_layout/style.css"       rel="stylesheet" type="text/css" media="all"   />
 	<link href="_layout/style-print.css" rel="stylesheet" type="text/css" media="print" />
-
-	<!-- //////// jQuery ////////  -->
-	<script src="_layout/js/jquery-1.4.2.min.js" type="text/javascript"></script>
-	
-	<!-- //////// DD_belatedPNG - Png Fix for IE ////////  -->
-	<!--[if IE 6 ]>
-		<script type="text/javascript" src="_layout/js/DD_belatedPNG_0.0.7a-min.js"></script>
-		<script type="text/javascript">
-			DD_belatedPNG.fix('#header,#content,#footer');
-		</script>
-	<![endif]-->
-	
-	<!-- //////// Cufon Font Replacement ////////  -->
-	<script type="text/javascript" src="_layout/js/cufon/cufon-yui.js"></script>
-	<script type="text/javascript" src="_layout/js/cufon/hattori_hanzo.font.js"></script>
-
-	<!-- //////// Tipsy - custom Tooltips ////////  -->
-	<link rel="stylesheet" type="text/css" href="_layout/js/tipsy/css.tipsy.css" />
-	<script type="text/javascript" src="_layout/js/tipsy/jquery.tipsy.js"></script>
-
-	<!-- //////// PrettyPhoto ////////  -->
-	<link rel="stylesheet" type="text/css" href="_layout/js/prettyphoto/css.prettyPhoto.css" />
-	<script type="text/javascript" src="_layout/js/prettyphoto/jquery.prettyPhoto.js"></script>
-	
-	<!-- //////// Tweet! ////////  -->
-	<link rel="stylesheet" type="text/css" href="_layout/js/tweet/css.tweet.css" />
-	<script type="text/javascript" src="_layout/js/tweet/jquery.tweet.js"></script>
-	
-	<!-- //////// Customs JS  ////////  -->	
-	<script type="text/javascript">
-	/* <![CDATA[ */	                                         
-		$(document).ready(function(){
-		
-			// font replacement
-			if ( ! ( $.browser.msie & ($.browser.version == 6) ) )
-			{ 	
-				$("h1#name").css({'font-size':'46px', 'padding-top':'20px' , 'margin-bottom':'0px' });
-				Cufon.replace('#portfolio h2, h2.cv-section-name, h1#name, h2.title'); // using cufon with IE6 breaks the layout in some cases
-				
-			}	
-			
-			// tooltips
-			$('.tip').tipsy({gravity: 'e'});	//  apply class .tip to any <a> tag to make it's  title be displayed like a tooltip
-			
-			// lightbox
-			$("a[rel^='prettyPhoto']").prettyPhoto({
-				theme: 'light_square',
-				hideflash: false, 		// Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto
-				wmode: 'opaque', 		// Set the flash wmode attribute
-				autoplay: true, 		// Automatically start videos: True/False
-				modal: false 			// If set to true, only the close button will close the window
-			});
-			
-			// display last tweet
-			 $(".tweet").tweet({
-				username: "bitpub",
-				join_text: "auto",
-				avatar_size: 32,
-				count: 1,
-				auto_join_text_default: "said,",
-				auto_join_text_ed: "i",
-				auto_join_text_ing: "i was",
-				auto_join_text_reply: "i replied to",
-				auto_join_text_url: "i was checking out",
-				loading_text: "loading tweets..."
-			});
-			
-			// Animate Social Media Icons
-			$("#social-media li a").hover(function () {
-				$(this).stop().animate({
-					paddingTop: "0px"
-				}, 100);
-			}, function () {
-				$(this).stop().animate({
-					paddingTop: "3px"
-				}, 100);
-			});
-					
-			$('.tip-social-media').tipsy({gravity: 'n'});
-			
-			// contact form
-			$("#contact-form").submit(function(){
-				var str = $(this).serialize();
-				$.ajax({
-				   type: "POST",
-				   url: "_layout/php/send.php",
-				   data: str,
-				   success: function(msg)
-				   {
-						$("#formstatus").ajaxComplete(function(event, request, settings){
-							if(msg == 'OK'){ // Message Sent? Show the 'Thank You' message and hide the form
-								result = '<div class="formstatusok">Your message has been sent. Thank you!</div>';
-								$("#fields").hide();
-							}
-							else{
-								result = msg;
-							}
-							$(this).html(result);
-						});
-					}
-				
-				 });
-				return false;
-			}); 
-		
-		});
-	/* ]]> */			
-	</script> 
 	
 </head>
 <body>
@@ -258,7 +150,113 @@
 		</div><!-- end #footer -->
 		
 	</div><!-- end #wrap -->
+	<!-- //////// jQuery ////////  -->
+	<script src="_layout/js/jquery-1.4.2.min.js" type="text/javascript"></script>
 	
+	<!-- //////// DD_belatedPNG - Png Fix for IE ////////  -->
+	<!--[if IE 6 ]>
+		<script type="text/javascript" src="_layout/js/DD_belatedPNG_0.0.7a-min.js"></script>
+		<script type="text/javascript">
+			DD_belatedPNG.fix('#header,#content,#footer');
+		</script>
+	<![endif]-->
+	
+	<!-- //////// Cufon Font Replacement ////////  -->
+	<script type="text/javascript" src="_layout/js/cufon/cufon-yui.js"></script>
+	<script type="text/javascript" src="_layout/js/cufon/hattori_hanzo.font.js"></script>
+
+	<!-- //////// Tipsy - custom Tooltips ////////  -->
+	<link rel="stylesheet" type="text/css" href="_layout/js/tipsy/css.tipsy.css" />
+	<script type="text/javascript" src="_layout/js/tipsy/jquery.tipsy.js"></script>
+
+	<!-- //////// PrettyPhoto ////////  -->
+	<link rel="stylesheet" type="text/css" href="_layout/js/prettyphoto/css.prettyPhoto.css" />
+	<script type="text/javascript" src="_layout/js/prettyphoto/jquery.prettyPhoto.js"></script>
+	
+	<!-- //////// Tweet! ////////  -->
+	<link rel="stylesheet" type="text/css" href="_layout/js/tweet/css.tweet.css" />
+	<script type="text/javascript" src="_layout/js/tweet/jquery.tweet.js"></script>
+	
+	<!-- //////// Customs JS  ////////  -->	
+	<script type="text/javascript">
+	/* <![CDATA[ */	                                         
+		$(document).ready(function(){
+		
+			// font replacement
+			if ( ! ( $.browser.msie & ($.browser.version == 6) ) )
+			{ 	
+				$("h1#name").css({'font-size':'46px', 'padding-top':'20px' , 'margin-bottom':'0px' });
+				Cufon.replace('#portfolio h2, h2.cv-section-name, h1#name, h2.title'); // using cufon with IE6 breaks the layout in some cases
+				
+			}	
+			
+			// tooltips
+			$('.tip').tipsy({gravity: 'e'});	//  apply class .tip to any <a> tag to make it's  title be displayed like a tooltip
+			
+			// lightbox
+			$("a[rel^='prettyPhoto']").prettyPhoto({
+				theme: 'light_square',
+				hideflash: false, 		// Hides all the flash object on a page, set to TRUE if flash appears over prettyPhoto
+				wmode: 'opaque', 		// Set the flash wmode attribute
+				autoplay: true, 		// Automatically start videos: True/False
+				modal: false 			// If set to true, only the close button will close the window
+			});
+			
+			// display last tweet
+			 $(".tweet").tweet({
+				username: "bitpub",
+				join_text: "auto",
+				avatar_size: 32,
+				count: 1,
+				auto_join_text_default: "said,",
+				auto_join_text_ed: "i",
+				auto_join_text_ing: "i was",
+				auto_join_text_reply: "i replied to",
+				auto_join_text_url: "i was checking out",
+				loading_text: "loading tweets..."
+			});
+			
+			// Animate Social Media Icons
+			$("#social-media li a").hover(function () {
+				$(this).stop().animate({
+					paddingTop: "0px"
+				}, 100);
+			}, function () {
+				$(this).stop().animate({
+					paddingTop: "3px"
+				}, 100);
+			});
+					
+			$('.tip-social-media').tipsy({gravity: 'n'});
+			
+			// contact form
+			$("#contact-form").submit(function(){
+				var str = $(this).serialize();
+				$.ajax({
+				   type: "POST",
+				   url: "_layout/php/send.php",
+				   data: str,
+				   success: function(msg)
+				   {
+						$("#formstatus").ajaxComplete(function(event, request, settings){
+							if(msg == 'OK'){ // Message Sent? Show the 'Thank You' message and hide the form
+								result = '<div class="formstatusok">Your message has been sent. Thank you!</div>';
+								$("#fields").hide();
+							}
+							else{
+								result = msg;
+							}
+							$(this).html(result);
+						});
+					}
+				
+				 });
+				return false;
+			}); 
+		
+		});
+	/* ]]> */			
+	</script> 
 	<script type="text/javascript"> Cufon.now(); </script>
 
 	<!-- analytics code here -->

@@ -16,7 +16,14 @@
 	
 	<!-- //////// Css StyleSheets ////////  -->
 	<link href="_layout/style-print.css" rel="stylesheet" type="text/css" media="print" />
-	<link href="dist/css/style.min.css" rel="stylesheet" type="text/css" media="all"   />
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	<link href="_layout/style.css"       rel="stylesheet" type="text/css" media="all"   />
+	<link rel="stylesheet" type="text/css" href="_layout/js/tipsy/css.tipsy.css" />
+	<link rel="stylesheet" type="text/css" href="_layout/js/prettyphoto/css.prettyPhoto.css" />
+<!-- @endif -->
+<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<link href="dist/css/<!-- @echo cssname -->" rel="stylesheet" type="text/css" media="all"   />
+<!-- @endif -->
 	
 
 </head>
@@ -77,8 +84,27 @@
 	</div><!-- end #wrap -->
 	
 
-	<script src="dist/js/script.min.js"></script>
-	
+<!-- @if NODE_ENV == 'DEVELOPMENT' -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+	<script type="text/javascript" src="_layout/js/cufon/cufon-yui.js"></script>
+	<script type="text/javascript" src="_layout/js/cufon/hattori_hanzo.font.js"></script>
+	<script type="text/javascript" src="_layout/js/tipsy/jquery.tipsy.js"></script>
+	<script type="text/javascript" src="_layout/js/prettyphoto/jquery.prettyPhoto.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-touch.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-sanitize.min.js"></script>
+	<script src="http://cdnjs.cloudflare.com/ajax/libs/gsap/1.10.3/TweenMax.min.js"></script>
+  	<script src="_layout/angular/app.js"></script>
+<!-- @endif -->
+<!-- @if NODE_ENV == 'PRODUCTION' -->
+	<script src="dist/js/<!-- @echo jsname -->"></script>
+<!-- @endif -->
+
+
+
 	<!-- //////// DD_belatedPNG - Png Fix for IE ////////  -->
 	<!--[if IE 6 ]>
 		<script type="text/javascript" src="_layout/js/DD_belatedPNG_0.0.7a-min.js"></script>

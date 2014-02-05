@@ -2,7 +2,7 @@
   "name": "my-portfolio",
   "version": "0.0.0",
   "app_version": "1.0.0",
-  "angular_version":"1.2.0-rc.3",
+  "angular_version": "1.2.0-rc.3",
   "description": "My resume and portfolio",
   "main": "Gruntfile.js",
   "scripts": {
@@ -27,6 +27,7 @@
     "grunt-curl": "~1.1.1",
     "grunt-preprocess": "~3.0.1",
     "grunt-env": "~0.4.0",
-    "grunt-contrib-clean": "~0.5.0"
+    "grunt-contrib-clean": "~0.5.0",
+    "grunt-contrib-copy": "~0.5.0"
   }
 }

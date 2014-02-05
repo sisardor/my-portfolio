@@ -7,3 +7,4 @@ public/_layout/php
 read-me-first.txt
 public/tmp/*
 public/node_modules/*
+public/dist/*
