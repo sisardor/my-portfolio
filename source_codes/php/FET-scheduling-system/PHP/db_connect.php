@@ -4,7 +4,7 @@ define("USER", "root"); // The database username.
 define("PASSWORD", "root"); // The database password. 
 define("DATABASE", "fet"); // The database name.
 
-$dbname = "mctom03_2261db";
+$dbname = "fet";
 $users = "users"; 
  
 $mysqli = new mysqli(HOST, USER, PASSWORD, DATABASE);

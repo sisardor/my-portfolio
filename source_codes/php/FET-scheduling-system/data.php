@@ -22,7 +22,7 @@
 		<div id="mainForm">
 			<fieldset>
 				<legend><?php echo ucfirst($semester);?></legend>
-				<?php include 'html/nav.html'?>
+				<?php include 'html/nav.html';?>
 				
 				<article id="box">
 					<ul class="tabs">

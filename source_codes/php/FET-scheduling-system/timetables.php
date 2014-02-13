@@ -117,6 +117,8 @@
 		/*Code to check if semester already exists and if they want to continue...*/
 		
 		mkdir($pathToMyDir.$semester);
+		echo $pathToMyDir.$semester;
+		die();
 		$insert = $mysqli->prepare("INSERT INTO ".$dbname.".user_tables (semester, institution_name, comments, user_name) VALUES (?, ?, ?, ?)");
 		$insert->bind_param("ssss", $semester, $institutionName, $comments, $userID);
 		$insert->execute();

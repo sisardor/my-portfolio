@@ -28,6 +28,7 @@
 
 <?php
 	include 'PHP/db_connect.php';
+	$current_dir = getcwd();
 	if(isset($_REQUEST['signup'])){
 		$id = $_POST['id'];
 		$pwd = $_POST['pwd'];
@@ -43,7 +44,7 @@
 				$id = $_POST['id'];
 				$pwd = $_POST['pwd'];
 								
-				$query = $mysqli->prepare("INSERT INTO `$dbname`.`users` (`user_name`, `password`) VALUES (?, ?)");
+				$query = $mysqli->prepare("INSERT INTO `users` (`user_name`, `password`) VALUES (?, ?)");
 				$query->bind_param("ss", $id, $pwd);
 				$query->execute();
 				
@@ -53,7 +54,8 @@
 						</script>";
 				}
 				else{
-					mkdir("/home/mctom03/public_html/Project/uploads/$id");
+					mkdir($current_dir."/uploads/$id");
+
 					header("Location: index.php");
 				}
 				

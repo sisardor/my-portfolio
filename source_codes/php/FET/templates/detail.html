@@ -1,0 +1,18 @@
+<div class="panel panel-success alert-success one-edge-shadow">
+ 	<div class="panel-body alert-success">
+ 		<form role="form" name="myForm">
+
+			<div class="form-group">
+				<label for="">Enter new name:</label><!-- 
+				<input ng-model="item.name" type="text" class="form-control" required> -->
+				<input class="form-control input-sm" type="text" name="name" ng-model="item.name" required>
+				<span ng-show="" class="help-inline">Required</span>
+			</div>
+			<div class="form-group">
+				<button class="btn btn-primary btn-sm" ng-click="cancel()">Cancel</button>
+				<button class="btn btn-primary btn-sm" ng-click="save()" ng-disabled="isClean()" >Save</button>
+				<button class="btn btn-danger btn-sm" ng-click="destroy()" ng-show="item.id" >Delete</button>
+			</div>
+		</form>
+  	</div>
+</div>
