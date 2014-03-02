@@ -1,22 +1,47 @@
 <?php
 
+/**
+  * ContactsController API class
+  *
+  * This class handle all API for contacts, 
+  * create, edit, view single contact
+  *
+  * @author     Sardor Isakov
+  * @package    ContactsController
+  * @param      void
+  * @return     void
+  */
 class ContactsController extends BaseController {
 
+    /*
+    |--------------------------------------------------------------------------
+    | Contacts API Controller
+    |--------------------------------------------------------------------------
+    |
+    | You may wish to use controllers instead of, or in addition to, Closure
+    | based routes. That's great! Here is an example controller method to
+    | get you started. To route to this controller, just add the route:
+    |
+    |   Route::resource('contact', 'ContactsController');
+    |
+    */
     /**
      * Display a listing of the resource.
      *
      * @return Response
      */
     public function index() {
-        if (Request::ajax()) {
+        
+        
+            $user_ID = Auth::user()->id;
 
-            $users = LMongo::collection('contacts')->get();
-            return $users;
-        }
-        else {
-            $r = Contact::getContacts();
-            return View::make('contacts.index');
-        }
+            $users = LMongo::collection('contacts')->where('user_id', $user_ID)->get();
+            $result = array();
+            foreach ($users as $key => $value) 
+                array_push($result, $value);
+            
+            return Response::json($result);
+
     }
 
     /**
@@ -38,7 +63,9 @@ class ContactsController extends BaseController {
         //
         $clean_name = strtolower(Input::get('name.first')) . "-" . strtolower(Input::get('name.last'));
         $clean_name =  str_replace (" ", "", $clean_name);
+        $user_ID = Auth::user()->id;
         $input = array(
+                'user_id' => $user_ID,
                 'added' => Input::get('added'),
                 'email' => Input::get('email'),
                 'notes' => Input::get('notes'),
@@ -64,7 +91,7 @@ class ContactsController extends BaseController {
      * @return Response
      */
     public function show($id) {
-        if (Request::ajax()) {
+        
             $user = LMongo::collection('contacts')->where('clean_name', $id)->first();
             if(!$user) {
                 return Response::json(array(
@@ -73,9 +100,7 @@ class ContactsController extends BaseController {
                 ), 404);
             }
             return $user;
-        } else {
-            return 'Nice try';
-        }
+
     }
 
     /**

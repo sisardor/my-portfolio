@@ -6,9 +6,7 @@
 
 <!-- <base href="/contact"> -->
 <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.0.7/angular.min.js"></script>
-<script src="js/underscore.js"></script>
-<script src="js/angular-resource.min.js"></script>
-<script src="http://cdn.jsdelivr.net/restangular/latest/restangular.min.js"></script>
+<script src="js/vendor/angular-resource.min.js"></script>
 
 <style>
   * { box-sizing: border-box; }

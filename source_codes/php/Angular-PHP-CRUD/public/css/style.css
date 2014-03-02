@@ -106,7 +106,9 @@ textarea {
     font: 12px Helvetica, Arial, sans-serif;
 }
 
-
+.post h2 > a {
+  color: black;
+}
 
 
 

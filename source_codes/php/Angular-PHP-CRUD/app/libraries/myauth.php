@@ -7,4 +7,5 @@ class Myauth extends Laravel\Auth\Drivers\Driver {
     public function retrieve($id)
     {
     }
+   
 }

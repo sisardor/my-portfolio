@@ -11,78 +11,97 @@
 |
 */
 
-// Routes for ads controller
+
+/*
+|--------------------------------------------------------------------------
+| Home Controller
+|--------------------------------------------------------------------------
+*/
+Route::get('/', 'HomeController@index');
+
+/*
+|--------------------------------------------------------------------------
+| Account API Controller
+|--------------------------------------------------------------------------
+*/
 Route::post('/account/ads', 'AccountController@store');
+
 Route::get('/account/ads', 'AccountController@index');
 Route::get('/account/ads/{id}', 'AccountController@show');
 Route::put('/account/ads/{id}', 'AccountController@update');
 Route::get('account', array('as' => 'home', function() {
 	return View::make('ads.index');
-}));
+}))->before('auth');
 
-// Routes for auth controller
+
+/*
+|--------------------------------------------------------------------------
+| Auth Controller
+|--------------------------------------------------------------------------
+*/
 Route::get('logout', array('as' => 'logout', 'uses' => 'AuthController@logout'))->before('auth');
 Route::post('login', 'AuthController@login');
+Route::post('upload/avatar', 'AuthController@upload');
 Route::post('register', 'AuthController@register');
 Route::get('register', array('as'=>'register_form', 'uses' => 'AuthController@register_form'))->before('guest');
 Route::get('login', array('as' => 'login', 'uses' => 'AuthController@index'))->before('guest');
 Route::get('profile', array('as' => 'profile', 'uses' => 'AuthController@profile'))->before('auth');
 
-// Routes for contacts controller
+/*
+|--------------------------------------------------------------------------
+| Contacts API Controller
+|--------------------------------------------------------------------------
+*/
 Route::resource('contact', 'ContactsController');
 
-
-Route::get('/', function() {
-	return View::make('home');
+Route::get('/item/{id}', function($id) {
+	$value = Cache::get($id);
+    if (empty($value)) {
+		$value = LMongo::collection('ads')->where('_id', new MongoId($id))->first();
+		$minutes = 200;
+		Cache::put($id, $value, $minutes);
+	}
+	return View::make('item', array('ad' => $value, 'user_name' => 'Sardor I'));
 });
+
 
 Route::get('upload_image', function() {
 	return View::make('upload');
 });
 Route::post('/api/upload', function() {
-	$file = Input::file('file');
- 
-	$destinationPath = 'uploads/'.str_random(8);
-	$filename = $file->getClientOriginalName();
-	//$extension =$file->getClientOriginalExtension(); 
-	$upload_success = Input::file('file')->move($destinationPath, $filename);
-	 
-	if( $upload_success ) {
-	   return Response::json('success', 200);
-	} else {
-	   return Response::json('error', 400);
-	}
-});
-
-Route::get('/rest', function() {
-	return View::make('rest');
-});
-Route::get('list', function() {
-	return View::make('list');
-});
-Route::get('detail', function() {
-	return View::make('detail');
-});
+		$file = Input::file('image');
 
 
-// Test cases
+		$destinationPath = 'uploads/'.str_random(8);
 
-Route::get('/rest/projects', function() {
-	return '[ { "_id"  : "51b8588fe4b0c2edf2e75818" , "name" : "Cappucino" , "site" : "http://cappuccino.org/" , "description" : "Objective-J."},
-			  { "_id" :  "51b8588fe4b0c2edf2e70000" , "name" : "Sardor" , "site" : "http://cappuccino.org/" , "description" : "Sardor-J."} ]';
+		$filename = $file->getClientOriginalName();
+		$upload_success = Input::file('image')->move($destinationPath, $filename);
+		 
+		if( $upload_success ) {
+			$avatar = array(
+				'avatar' => $destinationPath.'/'.$filename,
+			);
+
+
+			$id = LMongo::collection('users')
+                ->where('_id', new MongoId( Auth::user()->id ))
+                ->update($avatar);
+
+            $arrayName = array(
+            	'success' => 200, 
+            	'avatar'=>$destinationPath.'/'.$filename);
+
+            $id = LMongo::collection('ads')
+                ->where('user_id', Auth::user()->id)
+                ->update($avatar);
+
+		   return Response::json($arrayName);
+		} else {
+		   return Response::json('error', 400);
+		}
 });
-Route::get('/rest/projects/{id}', function($id) {
-	return '{ "_id" :  "51b8588fe4b0c2edf2e75818" , "name" : "Cappucino" , "site" : "http://cappuccino.org/" , "description" : "Objective-J."}';
-});
-Route::post('/rest/projects', function() {
-	return "Good";
-});
-Route::put('/rest/projects/{id}', function($id) {
-	return 'We got the post ' . Input::get('name');
-});
-Route::delete('/rest/projects/{id}', function($id) {
-	return 'Ok we will delete ';
-});
+
+
 
 
 

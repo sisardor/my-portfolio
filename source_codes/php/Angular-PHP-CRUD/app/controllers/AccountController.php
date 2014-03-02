@@ -1,17 +1,28 @@
 <?php
 
-class AccountController extends \BaseController {
+/**
+  * AccountController API class
+  *
+  * This class handle all auth requests, processes registration and login form 
+  * requests and return user profile
+  *
+  * @author  	Sardor Isakov
+  * @package	AuthController
+  * @param 		void
+  * @return 	void
+  */
+class AccountController extends BaseController {
 
 	/*
 	|--------------------------------------------------------------------------
-	| Default Home Controller
+	| Account Controller
 	|--------------------------------------------------------------------------
 	|
 	| You may wish to use controllers instead of, or in addition to, Closure
 	| based routes. That's great! Here is an example controller method to
 	| get you started. To route to this controller, just add the route:
 	|
-	|	Route::get('/', 'HomeController@showWelcome');
+	|	Route::get('/', 'AccountController@showWelcome');
 	|
 	*/
 	 /**
@@ -23,17 +34,14 @@ class AccountController extends \BaseController {
     public function show($id) {
     	$value = Cache::get($id);
     	if ($value) {
-    		 
     		 return $value;
-
-		    
 		} else {
 		 	 $value = LMongo::collection('ads')->where('_id', new MongoId($id))->first();
 			 $minutes = 200;
 			 Cache::put($id, $value, $minutes);
 			 //$value = Cache::get('key');
 		 	 return $value;
-		 }
+		}
 
         // if (Request::ajax()) {
         //     $user = LMongo::collection('ads')->where('_id', new MongoId($id))->first();
@@ -50,29 +58,24 @@ class AccountController extends \BaseController {
     }
 
 	public function index() {
-		// $id = "key";
-		// if (Cache::has($id)) {
-  //   		 return Cache::get($id);
-		// } else {
-		// 	 $ads = LMongo::collection('ads')->where('user_id', Auth::user()->id)->get();
-		// 	 $minutes = 200;
-		// 	 Cache::put($id, $ads, $minutes);
-		// 	 return $ads;
-		// }
 
-        if (Request::ajax()) {
-
+        //if (Request::ajax()) {
             $ads = LMongo::collection('ads')->where('user_id', Auth::user()->id)->get();
-            return $ads;
-        }
-        else {
-            $r = Contact::getContacts();
-            return View::make('contacts.index');
-        }
+            $result = array();
+            foreach ($ads as $key => $value) 
+            	array_push($result, $value);
+            
+            return Response::json($result);
+        // }
+        // else {
+        //     $r = Contact::getContacts();
+        //     return View::make('contacts.index');
+        // }
     }
     public function update($id) {
     	Cache::forget($id);
         $cat = Input::get('cat');
+        $user = LMongo::collection('users')->where('_id', new MongoId(Auth::user()->id) )->first();
 
 		if($cat == "nko" || $cat == "nga") {
 			$ad = array(
@@ -83,7 +86,8 @@ class AccountController extends \BaseController {
 				'land_area' => Input::get('land_area'),
 				'real_square' => Input::get('real_square'),
 				'rooms' => Input::get('rooms'),
-				"cat" => $cat
+				"cat" => $cat,
+				'avatar' => $user['avatar']
 			);
 
 
@@ -106,7 +110,8 @@ class AccountController extends \BaseController {
 				'auto_model' => Input::get('auto_model'),
 				'auto_year' => Input::get('auto_year'),
 				'auto_total_mile' => Input::get('auto_total_mile'),
-				"cat" => $cat
+				"cat" => $cat,
+				'avatar' => $user['avatar']
 			);
 			$id = LMongo::collection('ads')
                 ->where('_id', new MongoId($id))
@@ -120,6 +125,8 @@ class AccountController extends \BaseController {
     }
 	public function store() {
 		$cat = Input::get('cat');
+		$user = LMongo::collection('users')->where('_id', new MongoId(Auth::user()->id) )->first();
+
 
 		if($cat == "nko" || $cat == "nga") {
 			$ad = array(
@@ -130,7 +137,8 @@ class AccountController extends \BaseController {
 				'land_area' => Input::get('land_area'),
 				'real_square' => Input::get('real_square'),
 				'rooms' => Input::get('rooms'),
-				"cat" => $cat
+				"cat" => $cat,
+				'avatar' => $user['avatar']
 			);
 
 			$id = LMongo::collection('ads')->insert($ad);
@@ -147,7 +155,8 @@ class AccountController extends \BaseController {
 				'auto_model' => Input::get('auto_model'),
 				'auto_year' => Input::get('auto_year'),
 				'auto_total_mile' => Input::get('auto_total_mile'),
-				"cat" => $cat
+				"cat" => $cat,
+				'avatar' => $user['avatar']
 			);
 
 			$id = LMongo::collection('ads')->insert($ad);
