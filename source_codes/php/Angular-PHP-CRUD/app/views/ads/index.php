@@ -35,12 +35,12 @@ if (App::environment('local') == "local") {
     <div id="container">
     	<div id="nav">
             <ul>
-                <li><a href="<?php echo $base_link; ?>">Home</a></li>
+                <li><a href="/">Home</a></li>
                 <li><a href="#/profile">Profile</a></li>
                 <li><a href="#/">My Account</a></li>
                 <li><a href="#/contacts">My Contacts</a></li>
                 <li><a href="#/upload">Upload</a></li>
-                <li><a href="<?php echo $base_link ?>/logout">Logout</a></li>
+                <li><a href="/logout">Logout</a></li>
                 
             </ul>
         </div><!-- end nav -->

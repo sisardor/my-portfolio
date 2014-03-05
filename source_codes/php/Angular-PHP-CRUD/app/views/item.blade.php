@@ -1,13 +1,7 @@
 @extends('layout')
 
 @section('content')
-<?php 
-if (App::environment('local') == "local") {
-    $base_link = "";
-} else {
-    $base_link = "/source_codes/php/Angular-PHP-CRUD/public"; 
-}
-?>
+
 <div class="" ng-app="homeApp">
     <h2>Item page</h2>
 
@@ -21,7 +15,7 @@ if (App::environment('local') == "local") {
                     <header class="post-header" >
                         <?php 
                             $avatar = ( isset($ad["avatar"]) ? $ad["avatar"] : "http://purecss.io/img/common/tilo-avatar.png" ); 
-                            $avatar = $base_link.$avatar;
+                            
                         ?>
                         <img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" src="<?php echo $avatar; ?>">
 
@@ -63,7 +57,7 @@ if (App::environment('local') == "local") {
 
                 <div class="bubble-list" >
                     <div ng-repeat="bubble in comments" class="bubble clearfix">
-                        <img ng-src="<?php echo $base_link; ?>{{bubble.avatar}}">
+                        <img ng-src="{{bubble.avatar}}">
                         <div class="bubble-content">
                             <p style="font-size: 10px;color: #6E6E6E;"><a href="">{{bubble.user || 'User'}}</a> replied on {{bubble.timestamp | date:'EEE, y/M/dd - h:mma'}}</p>
                             <div class="point"></div>

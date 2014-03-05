@@ -56,12 +56,12 @@ Route::get('profile', array('as' => 'profile', 'uses' => 'AuthController@profile
 Route::resource('contact', 'ContactsController');
 
 Route::get('/item/{id}', function($id) {
-	$value = Cache::get($id);
-    if (empty($value)) {
+	//$value = Cache::get($id);
+    //if (empty($value)) {
 		$value = LMongo::collection('ads')->where('_id', new MongoId($id))->first();
 		$minutes = 200;
-		Cache::put($id, $value, $minutes);
-	}
+		//Cache::put($id, $value, $minutes);
+	//}
 	return View::make('item', array('ad' => $value, 'user_name' => 'Sardor I'));
 });
 
@@ -100,6 +100,10 @@ Route::post('api/upload', function() {
             );
 
             $id = LMongo::collection('ads')
+                ->where('user_id', Auth::user()->id)
+                ->update($avatar);
+
+            $id = LMongo::collection('comments')
                 ->where('user_id', Auth::user()->id)
                 ->update($avatar);
 

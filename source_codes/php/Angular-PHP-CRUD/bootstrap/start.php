@@ -28,7 +28,7 @@ $app->redirectIfTrailingSlash();
 
 $env = $app->detectEnvironment(array(
 
-	'local' => array('Sardors-iMac.localXX'),
+	'local' => array('Sardors-iMac.local'),
 
 ));
 

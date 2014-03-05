@@ -21,7 +21,7 @@ if (App::environment('local') == "local") {
                         <header class="post-header">
                             <?php 
                                 $avatar = ( isset($item["avatar"]) ? $item["avatar"] : "http://purecss.io/img/common/tilo-avatar.png" ); 
-                                $avatar = $base_link.$avatar;
+
 
                             ?>
                             <img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" src="<?php echo $avatar; ?>">
@@ -29,7 +29,7 @@ if (App::environment('local') == "local") {
 
 
 
-                            <h2 class="post-title">   <?php echo '<a href="'. $base_link .'/item/' . $item['_id']->{'$id'} . '"  > '. $item['title'] .'</a>'; ?></h2>
+                            <h2 class="post-title">   <?php echo '<a href="'.'/item/' . $item['_id']->{'$id'} . '"  > '. $item['title'] .'</a>'; ?></h2>
 
                             <p class="post-meta">
                                 By <a href="#" class="post-author"><?php echo $user_name; ?></a> under 
@@ -42,7 +42,7 @@ if (App::environment('local') == "local") {
                             <p>
                                 <?php echo Myhelper::myTruncate($item['text'], 150) ; ?> 
 
-                                <?php echo '<a href="'. $base_link .'/item/' . $item['_id']->{'$id'} . '"> <i class="fa fa-long-arrow-right"></i> </a>' ?>
+                                <?php echo '<a href="'. '/item/' . $item['_id']->{'$id'} . '"> <i class="fa fa-long-arrow-right"></i> </a>' ?>
                             </p>
                         </div>
                     </section>
