@@ -115,3 +115,54 @@ pre.code, code {
  word-wrap: break-word; 
  width:100%; overflow-x:auto;
 }
+
+.bubble img {
+    float:left;
+    width:70px;
+    height:70px;
+    border:3px solid #ffffff;
+    border-radius:35px;
+}
+.bubble-content {
+    font-size: 12px;
+    color: #393939;
+    position: relative;
+    margin-left: 80px;
+    padding: 1px 9px;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+   box-shadow:1px 1px 5px rgba(0,0,0,.2);
+}
+.bubble {
+    margin-top:10px;
+}
+.point {
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+    border-right: 12px solid #F1F1F1;
+    position:absolute;
+    left:-10px;
+    top:12px;
+} 
+.clearfix:after {
+    visibility:hidden;
+    display:block;
+    font-size:0;
+    content: ".";
+    clear:both;
+    height:0;
+    line-height:
+}
+.clearfix {
+    display: inline-block;
+}
+* html .clearfix {
+    height: 1%;
+}
+.button-small {
+    font-size: 85%;
+}
+.hide {
+    display:none;
+}

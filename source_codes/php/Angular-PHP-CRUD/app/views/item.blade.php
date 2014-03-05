@@ -1,59 +1,13 @@
 @extends('layout')
 
 @section('content')
-<style>
-.bubble img {
-    float:left;
-    width:70px;
-    height:70px;
-    border:3px solid #ffffff;
-    border-radius:35px;
+<?php 
+if (App::environment('local') == "local") {
+    $base_link = "";
+} else {
+    $base_link = "/source_codes/php/Angular-PHP-CRUD/public"; 
 }
-.bubble-content {
-    font-size: 12px;
-    color: #393939;
-    position: relative;
-    margin-left: 80px;
-    padding: 1px 9px;
-    border-radius: 10px;
-    background-color: #F1F1F1;
-    box-shadow: 1px 1px 5px rgba(0,0,0,.2);
-   box-shadow:1px 1px 5px rgba(0,0,0,.2);
-}
-.bubble {
-    margin-top:10px;
-}
-.point {
-    border-top:10px solid transparent;
-    border-bottom:10px solid transparent;
-    border-right: 12px solid #F1F1F1;
-    position:absolute;
-    left:-10px;
-    top:12px;
-} 
-.clearfix:after {
-    visibility:hidden;
-    display:block;
-    font-size:0;
-    content: ".";
-    clear:both;
-    height:0;
-    line-height:
-}
-.clearfix {
-    display: inline-block;
-}
-* html .clearfix {
-    height: 1%;
-}
-.button-small {
-    font-size: 85%;
-}
-.hide {
-    display:none;
-}
-
-</style>
+?>
 <div class="" ng-app="homeApp">
     <h2>Item page</h2>
 
@@ -67,6 +21,7 @@
                     <header class="post-header" >
                         <?php 
                             $avatar = ( isset($ad["avatar"]) ? $ad["avatar"] : "http://purecss.io/img/common/tilo-avatar.png" ); 
+                            $avatar = $base_link.$avatar;
                         ?>
                         <img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" src="<?php echo $avatar; ?>">
 
@@ -108,7 +63,7 @@
 
                 <div class="bubble-list" >
                     <div ng-repeat="bubble in comments" class="bubble clearfix">
-                        <img ng-src="{{bubble.avatar}}">
+                        <img ng-src="<?php echo $base_link; ?>{{bubble.avatar}}">
                         <div class="bubble-content">
                             <p style="font-size: 10px;color: #6E6E6E;"><a href="">{{bubble.user || 'User'}}</a> replied on {{bubble.timestamp | date:'EEE, y/M/dd - h:mma'}}</p>
                             <div class="point"></div>

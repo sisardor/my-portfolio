@@ -11,13 +11,13 @@
 
       <ul>
         @foreach( $errors->all() as $message )
-          <li>{{ $message }}</li>
+          <li><% $message %></li>
         @endforeach
       </ul>
   	</div>
     @endif
 
-{{ Form::open(array('url' => 'register', 'method' => 'post', 'class'=>"pure-form pure-form-aligned" )) }}
+<% Form::open(array('url' => 'register', 'method' => 'post', 'class'=>"pure-form pure-form-aligned" )) %>
     <fieldset>
         <div class="pure-control-group">
          <?php echo Form::label('email', 'Email');  ?>
@@ -38,7 +38,7 @@
       <button type="submit" class="pure-button pure-button-primary">Register</button>
     </div>
   </fieldset>
-{{ Form::close() }}
+<% Form::close() %>
 
 @stop
 

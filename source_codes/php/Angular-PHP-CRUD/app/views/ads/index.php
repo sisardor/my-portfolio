@@ -2,7 +2,7 @@
 if (App::environment('local') == "local") {
     $base_link = "";
 } else {
-    $base_link = "http://" . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+    $base_link = "/source_codes/php/Angular-PHP-CRUD/public";
 }
 
 ?>
@@ -35,7 +35,7 @@ if (App::environment('local') == "local") {
     <div id="container">
     	<div id="nav">
             <ul>
-                <li><a href="/">Home</a></li>
+                <li><a href="<?php echo $base_link; ?>">Home</a></li>
                 <li><a href="#/profile">Profile</a></li>
                 <li><a href="#/">My Account</a></li>
                 <li><a href="#/contacts">My Contacts</a></li>
@@ -60,7 +60,7 @@ if (App::environment('local') == "local") {
 
     </body>
     <!--  Frameworks -->
-    <script src="/js/vendor/angular-file-upload-shim.js"></script>
+    <script src="js/vendor/angular-file-upload-shim.js"></script>
     <script src="//code.jquery.com/jquery-1.9.1.min.js"> </script>
 
     <script src="http://code.angularjs.org/1.2.5/angular.min.js"> </script>
@@ -68,12 +68,12 @@ if (App::environment('local') == "local") {
     <script src="http://code.angularjs.org/1.2.5/angular-resource.min.js"> </script>
 
     <!--  My Script -->
-    <script src="/js/vendor/angular-file-upload.js"></script>
+    <script src="js/vendor/angular-file-upload.js"></script>
     
-    <script src="/js/src/app.js"></script>
-    <script src="/js/src/services.js"></script>
-    <script src="/js/src/controllers.js"></script>
-    <script src="/js/src/filters.js"></script>
-    <script src="/js/src/directives.js"></script>
+    <script src="js/src/app.js"></script>
+    <script src="js/src/services.js"></script>
+    <script src="js/src/controllers.js"></script>
+    <script src="js/src/filters.js"></script>
+    <script src="js/src/directives.js"></script>
  
 </html>
