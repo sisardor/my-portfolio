@@ -80,15 +80,16 @@
         $scope.showCheckMark = true;
         $scope.timeX = '1393991888000';
         var commentsRef = new Firebase("https://sardor.firebaseio.com/" + itemID);
-        $scope.people = $firebase(commentsRef);
+        // $scope.comments = $firebase(commentsRef);
+        // console.log($scope.comments )
         var last10Comments = commentsRef.limit(10);
         //Render Comments
         last10Comments.on('child_added', function (snapshot) {
             var comment = snapshot.val();
             //console.log(comment)
-            if (comment._id != pushedItemId) {
+            //if (comment._id != pushedItemId) {
                 $scope.comments.push(comment);
-            }
+            //}
         });
         $scope.submitComment = function () {
             $scope.showCheckMark = false;
@@ -97,8 +98,7 @@
                 'item_id': document.getElementById("post").getAttribute('data-item-id'),
             };
             $http.post('/api/comments', data).success(function (data) {
-                //data.data.comment = data.data.comment.replace(/\r?\n/g, '<br>');
-                $scope.comments.push(data.data);
+                
                 pushedItemId = data.data._id.$id;
                 data.data._id = data.data._id.$id;
                 $scope.comment = '';
