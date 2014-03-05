@@ -57,7 +57,15 @@ if (App::environment('local') == "local") {
 
 
     </div><!-- end container -->
-
+        <footer class="footer2">
+            <p class="pull-right"><a href="/">Back Home</a></p>
+            <p>Built as a sample application with <a href="http://documentcloud.github.com/backbone/">Angular.js</a>,
+            <a href="http://laravel.com/">Laravel 4</a>,
+            <a href="https://www.firebase.com/">Firebase</a>,
+            and <a href="http://www.mongodb.org/">MongoDB</a> by
+            <a href="http://sardor.me" target="_blank">Sardor Isakov</a>.<br>
+            The source code for this application is available in <a href="#">this repository</a> on GitHub.</p>
+        </footer>
     </body>
     <!--  Frameworks -->
     <script src="js/vendor/angular-file-upload-shim.js"></script>
