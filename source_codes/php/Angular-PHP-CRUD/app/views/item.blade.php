@@ -1,21 +1,74 @@
 @extends('layout')
 
 @section('content')
-<div class="">
+<style>
+.bubble img {
+    float:left;
+    width:70px;
+    height:70px;
+    border:3px solid #ffffff;
+    border-radius:35px;
+}
+.bubble-content {
+    font-size: 12px;
+    color: #393939;
+    position: relative;
+    margin-left: 80px;
+    padding: 1px 9px;
+    border-radius: 10px;
+    background-color: #F1F1F1;
+    box-shadow: 1px 1px 5px rgba(0,0,0,.2);
+   box-shadow:1px 1px 5px rgba(0,0,0,.2);
+}
+.bubble {
+    margin-top:10px;
+}
+.point {
+    border-top:10px solid transparent;
+    border-bottom:10px solid transparent;
+    border-right: 12px solid #F1F1F1;
+    position:absolute;
+    left:-10px;
+    top:12px;
+} 
+.clearfix:after {
+    visibility:hidden;
+    display:block;
+    font-size:0;
+    content: ".";
+    clear:both;
+    height:0;
+    line-height:
+}
+.clearfix {
+    display: inline-block;
+}
+* html .clearfix {
+    height: 1%;
+}
+.button-small {
+    font-size: 85%;
+}
+.hide {
+    display:none;
+}
+
+</style>
+<div class="" ng-app="homeApp">
     <h2>Item page</h2>
 
 
     		<div class="posts">
-                <h1 class="content-subhead">Pinned Post - Current time: {{ date('F j, Y, g:i A') }}</h1>
+                <h1 class="content-subhead">Pinned Post - Current time: <% date('F j, Y, g:i A') %></h1>
 
 
                 <!-- A single blog post -->
-                <section class="post">
-                    <header class="post-header">
+                <section class="post" id="post" data-item-id="<?php echo $ad['_id']->{'$id'}; ?>">
+                    <header class="post-header" >
                         <?php 
-                                $avatar = ( isset($ad["avatar"]) ? $ad["avatar"] : "http://purecss.io/img/common/tilo-avatar.png" ); 
-                            ?>
-                        <img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" src="/<?php echo $avatar; ?>">
+                            $avatar = ( isset($ad["avatar"]) ? $ad["avatar"] : "http://purecss.io/img/common/tilo-avatar.png" ); 
+                        ?>
+                        <img class="post-avatar" alt="Tilo Mitra's avatar" height="48" width="48" src="<?php echo $avatar; ?>">
 
                         <h2 class="post-title"><?php echo $ad['title']; ?> </h2>
 
@@ -34,5 +87,37 @@
                 </section>
 
             </div>
+
+            <div class="comments" style="" ng-controller="CommnetBoxCTRL">
+                <h1 class="content-subhead">Comments</h1>
+               
+                <?php if ( Auth::check() ) { ?> 
+                <form ng-submit="submitComment()"  class="pure-form pure-form-stacked" method="post" >
+                    <fieldset>
+                        <textarea ng-model="comment" ng-change="keydown()" name="commnet" placeholder="Enter your comment" id="comment" class="pure-input-1" style="resize:vertical;margin-bottom:10px;"></textarea>
+                        <input type="hidden" name="id" value="dsfsdfsdf">
+                        <div>
+                            <button type="submit" class="button-small pure-button pure-button-primary">Submit</button> 
+                            <i style="color: #5aba59;" ng-class="{hide: showCheckMark }" class="fa fa-check"></i>
+                        </div>
+                    </fieldset>
+                </form>
+                <?php } else { ?>
+                    <p>You need to login to comment!</p>
+                <?php } ?>
+
+                <div class="bubble-list" >
+                    <div ng-repeat="bubble in comments" class="bubble clearfix">
+                        <img ng-src="{{bubble.avatar}}">
+                        <div class="bubble-content">
+                            <p style="font-size: 10px;color: #6E6E6E;"><a href="">{{bubble.user || 'User'}}</a> replied on {{bubble.timestamp | date:'EEE, y/M/dd - h:mma'}}</p>
+                            <div class="point"></div>
+                            <pre style="font-family: Verdana, Helvetica, Arial;">{{bubble.comment}}</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
 </div>
+
 @stop
