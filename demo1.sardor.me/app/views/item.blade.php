@@ -30,7 +30,7 @@
 
                     <div class="post-description">
                         <p>
-                            <?php echo $ad['text']; ?> 
+                            <?php echo nl2br($ad['text']); ?> 
                         </p>
                     </div>
                 </section>

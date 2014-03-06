@@ -40,7 +40,7 @@ if (App::environment('local') == "local") {
 
                         <div class="post-description">
                             <p>
-                                <?php echo Myhelper::myTruncate($item['text'], 150) ; ?> 
+                                <?php echo Myhelper::myTruncate(nl2br($item['text']), 150) ; ?> 
 
                                 <?php echo '<a href="'. '/item/' . $item['_id']->{'$id'} . '"> <i class="fa fa-long-arrow-right"></i> </a>' ?>
                             </p>

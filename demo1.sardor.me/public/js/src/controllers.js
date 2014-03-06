@@ -130,14 +130,14 @@
 			}
 		}
 	}])
-	.controller('AddCtrl', ['$scope', '$http',
-		function ($scope, $http) {
+	.controller('AddCtrl', ['$scope', '$http','myCache','$location',
+		function ($scope, $http,myCache,$location) {
 			$scope.options = [
-				{category: 'коммерческая',group: 'недвижимость',value: 'nko'},
-				{category: 'гаражи и стоянки',group: 'недвижимость',value: 'nga'},
-				{category: 'автомобили - частные',group: 'транспорт',value: 'aup'},
-				{category: 'автомобили - дилерские',group: 'транспорт',value: 'aud'},
-				{category: 'события',group: 'разное',value: 'rso'}
+				{category: 'commercial',group: 'Real Estate',value: 'nko'},
+				{category: 'residential',group: 'Real Estate',value: 'nga'},
+				{category: 'auto - owner',group: 'Transportation',value: 'aup'},
+				{category: 'auto - dealer',group: 'Transportation',value: 'aud'},
+				{category: 'Other',group: 'Other',value: 'rso'}
 	  		];
 			$scope.templates = [
 				{
@@ -181,8 +181,13 @@
 					data: $scope.master
 				}).error(function (data, status, headers, config) {
 					console.log("Error!!");
+				}).success(function(data,status,headers,config) {
+					//$scope.updateCache('ads', $scope.master, $scope.ad._id.$id);
+					myCache.remove('ads');
+					$location.path('/'); //Redirect to /
 				});
 			};
+
 			$scope.reset = function () {
 				$scope.ad = angular.copy($scope.master);
 			};
@@ -201,11 +206,11 @@
 	}])
 	.controller('EditCtrl',  ['$scope', '$routeParams', '$location', '$http', 'Content', 'myCache', function ($scope, $routeParams, $location, $http, Content, myCache) {
 		$scope.options = [
-		    {category:'коммерческая', group:'недвижимость', value:'nko',isinuse: true},
-		    {category:'гаражи и стоянки', group:'недвижимость',value:'nga',isinuse: true},
-		    {category:'автомобили - частные', group:'транспорт',value:'aup',isinuse: true},
-		    {category:'автомобили - дилерские', group:'транспорт',value:'aud',isinuse: true},
-		    {category:'события', group:'разное',value:'rso', isinuse: true}
+		    {category:'commercial', group:'Real Estate', value:'nko',isinuse: true},
+		    {category:'residential', group:'Real Estate',value:'nga',isinuse: true},
+		    {category:'auto - owner', group:'Transportation',value:'aup',isinuse: true},
+		    {category:'auto - dealer', group:'Transportation',value:'aud',isinuse: true},
+		    {category:'other', group:'Other',value:'rso', isinuse: true}
 	  	];
 
 	  	$scope.templates = [ 
@@ -238,13 +243,13 @@
 					$scope.ad = temp[i];
 					
 					if($scope.ad.cat === "nko") {
-						$scope.template = { name: 'form_nko.html', url: 'form_nko.html'};
+						$scope.template = { name: 'form_nko.html', url: 'assets/account/form_nko.html'};
 						$scope.category = $scope.ad.cat;
 						$scope.options[0].isinuse = false;
 						$scope.option = $scope.options[0];
 					}
 					if($scope.ad.cat === "aup") {
-						$scope.template = { name: 'form_aup.html', url: 'form_aup.html'};
+						$scope.template = { name: 'form_aup.html', url: 'assets/account/form_aup.html'};
 						$scope.category = $scope.ad.cat;
 						$scope.options[2].isinuse = false;
 						$scope.option = $scope.options[2]
