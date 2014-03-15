@@ -1,0 +1,37 @@
+{
+   "id":2,
+   "title":"API with Nodejs, uzlist.com",
+   "description":"<p>Built with NodeJS, ExpressJS, MongoDB, and Redis. This project was developed for a existing website to support mobile apps with server API. </p><p>All CRUD functions are handled in Nodejs, all api route are handled in ExpressJS (node module). Database is implemented in MongoDB, NoSQL database.</p><h3>API functionalities:</h3><ul><li>Create, update, and delete ads</li><li>Retrieve data with search query</li><li>Send private message to user</li><li>Upload images</li><li>Retrieve, change lost password</li></ul><h3>Usage (sample account):</h3> Username: <strong>sardor@yahoo.uz</strong><br> Password: <strong>12345</strong><h3>Installation:</h3>Source code available upon request <h3>API example:</h3><p>Here is example of the API, url <br> <strong>http://api.uzlist.com/ads?category=carsowner&group=auto&limit=3</strong></p>",
+   "details":"<p><strong>Project Details:</strong></p><ul><li>Nodejs, Expressjs, MongoDB, and Redis</li><li>Easy Scalability</li><li>Memory cache support</li><li>Create ads</li><li>Upload images</li><li>Perform query seaches</li><li>Source Code - upon request</li></ul><p><br><strong>Live preview:</strong><br><a href=\"http://api.uzlist.com/ads?category=apartment&group=realestate&limit=2\" target=\"_blank\">api.uzlist.com/ads</a></p>",
+   "image_thumb":"portfolio-images/thumbs/image02.jpg",
+   "image_big":"portfolio-images/image02-640x550.jpg",
+   "link":"<code>HTML</code>",
+   "tech":[
+      "js",
+      "angular",
+      "mongodb"
+   ],
+   "projectUrl":"http://api.uzlist.com/ads?category=carsowner&group=auto&limit=3",
+   "gallery":[
+      {
+         "src":"portfolio-images/single/01.jpg",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/single/02.jpg",
+         "desc":"Image 02"
+      },
+      {
+         "src":"portfolio-images/single/03.jpg",
+         "desc":"Image 03"
+      },
+      {
+         "src":"portfolio-images/single/04.jpg",
+         "desc":"Image 04"
+      },
+      {
+         "src":"portfolio-images/single/05.jpg",
+         "desc":"Image 05"
+      }
+   ]
+}

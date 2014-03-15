@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html ng-app="resumeApp">
+<head>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+  <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+
+  <link href="_layout/card.css" rel="stylesheet">
+  <link href="_layout/style-print.css" rel="stylesheet" type="text/css" media="print" />
+	<link href="_layout/style.css"       rel="stylesheet" type="text/css" media="all"   />
+</head>
+<body ng-controller="myCTRL">
+
+
+  
+
+  	<div ng-repeat="item in projects" ng-class="{hover:item.viewing}" id="flip-toggle2" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+		<div class="flipper">
+			<div class="front">
+				<div class="info" ng-click="toggleThis(item.id)"><i class="fa fa-info-circle"></i></div>
+                <div class="image-box">
+                <a href="_content/640x550-placeholder.jpg" class="bordered" rel="prettyPhoto[portfolio]">
+			      <img ng-src="{{item.image}}" width="216" height="141" alt="" />					
+			     </a>
+			 	</div>
+                <div class="detail">
+                  <div class="title"><a href="" ng-click="toggleThis(item.id)" >{{item.title}}</a></div>
+                  <div class="body">{{item.detail}}
+                  	 <p><a href="" ng-click="toggleThis(item.id)" class="read-more">Read More</a></p>
+                  </div>
+                  <div class="tags">
+                    <span><i class="fa fa-html5"></i> js</span> 
+                    <span><i class="fa fa-android"></i> android</span>
+                  </div>
+                </div>
+			</div>
+			<div class="back">
+				
+			</div>
+		</div>
+	</div> 
+<div class="clickArea" ng-class="{ show: displayDetail}" ng-click="closeDisplay()"></div>
+<div id="myID" ng-class="{hover:displayDetail }" class="panel">
+	<div class="display">
+		<div class="box">
+			<div class="info" ng-click="closeDisplay()">
+                  <i class="fa fa-times"></i>
+            </div>
+             
+             <div id="portfolio">
+			
+				<div class="portfolio-item col-1 fixed">
+					
+					<div class="col-2 float-left padded-right">
+						
+						<div class="slider-wrap">
+							<div class="slider" id="slide1">
+								<ul>				
+									<li><img src="_content/438x202-placeholder.jpg" width="438" height="202" alt="" /></li>
+								</ul>
+							</div><!-- end .slider -->
+						</div><!-- end .slider-wrap -->	
+						
+						<br />
+						
+						<h2>{{displayItem.title}}</h2>
+						
+						<p>Etiam vitae justo ut <strong>felis ultrices</strong> placerat. Mauris dictum tellus ac dui
+						 bibendum at viverra augue iaculis. Praesent accumsan <em>purus</em> id ante tincidunt
+						 quis convallis. </p>
+
+						 
+						<p>Duis auctor consequat turpis quis sagittis. Integer ultrices porttitor porttitor.
+						 Sed suscipit, turpis in dictum gravida, <a href="#">lorem purus hendrerit</a> metus, nec pulvinar
+						 nibh quam ac lectus. Vestibulum sit amet ullamcorper dolor. </p> 
+						 					
+						<p>Nullam porta lectus id libero tincidunt adipiscing. Fusce mollis tortor nec elit ornare
+						 iaculis non sit amet nibh. Nunc vel libero neque. Maecenas ligula magna, cursus id auctor
+						 id, tempor accumsan eros.</p>
+
+					</div>
+					<div class="col-3 float-right">
+						
+						<br />
+						
+						<p><strong>Project Details:</strong></p>
+						
+						<ul>
+							<li>Donec imperdiet nunc</li>
+							<li>Id felis faucibus eu tempor</li>
+							<li>Sem tincidunt fusce a orci in</li>
+							<li>Risus ultrices pharetra</li>
+						</ul>
+						
+						<p><strong>Live preview:</strong>
+						   <br /><a href="#">www.sitelink.com</a></p>			
+						
+					</div>
+					
+				</div><!-- end .portfolio-item -->
+			
+			</div><!-- end #portfolio -->	
+
+
+        </div>
+	</div>
+</div>
+
+
+   
+	</body>
+
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-route.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-animate.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-touch.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.9/angular-sanitize.min.js"></script>
+
+	<script>
+	angular.module('resumeApp', ['ngRoute', 'ngAnimate', 'ngTouch', 'ngSanitize'])
+	.controller('myCTRL', function($scope) {
+		$scope.displayItem ={};
+		$scope.projects = [
+		{title:"Lorem Itsum blah blah 1", detail:"Built as a sample application with Angular.js, Laravel 4, Firebase, and MongoDB. The source code for this application is available in this repository ", tags:['js', 'android'], id:1, viewing:false, image: 'http://lorempixel.com/output/business-q-c-250-170-10.jpg',},
+		{title:"Lorem Itsum blah blah 2", detail:"Built as a sample application with Angular.js, Laravel 4, Firebase, and MongoDB. The source code for this application is available in this repository ", tags:['js', 'android'], id:2, viewing:false, image: 'http://lorempixel.com/output/business-q-c-250-170-1.jpg',},
+		{title:"Lorem Itsum blah blah 3", detail:"Built as a sample application with Angular.js, Laravel 4, Firebase, and MongoDB. The source code for this application is available in this repository ", tags:['js', 'android'], id:3, viewing:false, image: 'http://lorempixel.com/output/transport-q-c-250-170-8.jpg',},
+		{title:"Lorem Itsum blah blah 4", detail:"Built as a sample application with Angular.js, Laravel 4, Firebase, and MongoDB. The source code for this application is available in this repository ", tags:['js', 'android'], id:4, viewing:false, image: 'http://lorempixel.com/output/business-q-c-250-181-9.jpg',}
+		];
+		var currently_viewing = 0;
+		$scope.displayDetail = false;
+
+		$scope.toggleThis = function(id) {
+
+			flipCard();
+			for (var i = $scope.projects.length - 1; i >= 0; i--) {
+				if($scope.projects[i].id == id) {
+					currently_viewing = id;
+					console.log($scope.projects[i] + ' ' )
+					$scope.projects[i].viewing = true;
+					$scope.displayItem = $scope.projects[i];
+					$scope.displayDetail = true;
+					break;
+				}
+			};
+		};
+
+		$scope.closeDisplay = function() {
+			console.log('closeDisplay()');
+			$scope.displayDetail = false;
+			flipCard();	
+		};
+
+		function flipCard() {
+			for (var i = $scope.projects.length - 1; i >= 0; i--) {
+				if($scope.projects[i].viewing) {
+					$scope.projects[i].viewing = false;
+					$scope.displayDetail = false;
+					break;
+				}
+			};
+		}
+
+		
+
+	})
+
+
+	</script>
+</html>

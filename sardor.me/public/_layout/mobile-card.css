@@ -1,0 +1,98 @@
+@media screen and (max-width: 600px) {
+	body {
+	    padding: 10px;
+	    font: .9em Arial, Helvetica, sans-serif;
+	}
+
+	#wrap {
+	    width: 99%;
+	    min-width: 370px;
+	    margin: 0;
+	}
+
+	#header {
+	    padding: 5px 25px 0px 25px;
+	}
+
+	#block-top {
+	    margin-bottom: -15px;
+	}
+
+	ul#nav {
+	    list-style: none;
+	    float: none;
+	}
+
+	#content {
+	    padding: 30px 25px 30px 25px;
+	}
+
+	#footer {
+	    padding: 0px 25px 30px 25px;
+	}
+
+	#copyright {
+	    float: none;
+	}
+
+	.cv-section-items {
+	    padding-left: 0px;
+	}
+
+	.col-1 {
+	    width: 100%;
+	}
+
+	#cv-2 h2.cv-section-name {
+	    border-top: none;
+	    width: 100%;
+	    float: none;
+	}
+
+	#cv-2 ul.cv-section-items {
+	    width: 100%;
+	    float: left;
+	}
+
+	#cv-2 #technical-skills ul.cv-section-items li span.topic {
+	    width: 370px;
+	}
+
+	ul.cv-section-items li.cv-item {
+	    padding: 10px 10px;
+	}
+
+	.divider, .divider2 {
+	    margin-left: -19px;
+	    margin-right: -25px;
+	}
+
+	.divider {
+	    clear: both;
+	}
+
+	.divider2 {
+	    margin-bottom: 30px;
+	}
+
+	#block-top {
+	    margin-bottom: -15px;
+	    height: 15px;
+	}
+
+	#personal-info {
+	    margin-top: 30px;
+	}
+
+	#what-you-do {
+	    clear: both;
+	    padding: 20px 0;
+	    font: 1.2em;
+	}
+
+	ul#nav li a,ul#nav {
+		padding-bottom: 15px;
+	    font-size: 18px;
+	}
+
+}

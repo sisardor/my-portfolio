@@ -1,0 +1,37 @@
+{
+   "id":2,
+   "title":"Phonegap app for uzlist.com",
+   "description":"<p>Mobile app developed with Phonegap technology. 95% of Javascript functionality is based on Angularjs. App utilizes API at api.uzlist.com.</p><p>CRUD functions are handled in Angular controllers. App has many custom directives, and utilizes image lazy loading in number of places. Contents are dynamicly loaded from the server as user scrolls to the buttom of the pag</p><h3>App fuctionalities include:</h3><ul><li>Browsing ads in different categories</li><li>User authentication</li><li>Image lazy loading in number of places</li><li>Content infinite loading</li><li>HTML5 localstorage utilization</li></ul><h3>Usage (sample account):</h3>Username: <strong>sardor@yahoo.uz</strong><br>Password: <strong>12345</strong><h3>Installation:</h3>Source code available upon request<h3>API Example:</h3><p>Here is example of the API usage, URL <a href=\"http://uzblog.com\" target=\"_blank\">http://uzblog.com</a></p>",
+   "details":"<p><strong>Project Details:</strong></p><ul><li>Phonegap </li><li>Angularjs, HTML5, and CSS3</li><li>HTML5 localstorage</li><li>Browse content</li><li>Save content in localstrogae</li><li>Source Code - upon request</li></ul><p><br><strong>Live preview:</strong><br><a href=\"http://uzblog.com\" target=\"_blank\">uzblog.com</a></p>",  
+   "image_thumb":"portfolio-images/thumbs/image03.jpg",
+   "image_big":"portfolio-images/image03-640x550.jpg",
+   "link":"<code>HTML</code>",
+   "tech":[
+      "js",
+      "angular",
+      "mongodb"
+   ],
+   "projectUrl":"http://uzblog.com",
+   "gallery":[
+      {
+         "src":"portfolio-images/single/01.jpg",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/single/02.jpg",
+         "desc":"Image 02"
+      },
+      {
+         "src":"portfolio-images/single/03.jpg",
+         "desc":"Image 03"
+      },
+      {
+         "src":"portfolio-images/single/04.jpg",
+         "desc":"Image 04"
+      },
+      {
+         "src":"portfolio-images/single/05.jpg",
+         "desc":"Image 05"
+      }
+   ]
+}

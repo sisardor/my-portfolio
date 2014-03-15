@@ -1,0 +1,83 @@
+[
+     {
+          "id": 1,
+          "title": "Sample application with Angular, Firebase, and MongoDB",
+          "image_thumb": "portfolio-images/thumbs/image01.jpg",
+          "image_big": "portfolio-images/image01-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["js", "angular", "mongodb"],
+          "projectUrl":"http://localhost:9092/"
+      },
+      {
+          "id": 2,
+          "title": "Uzlist.com REST APIs based on Node.js",
+          "image_thumb": "portfolio-images/thumbs/image02.jpg",
+          "image_big": "portfolio-images/image02-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["php","nodejs", "api"],
+          "projectUrl":"http://localhost:9091/"
+      },
+      {
+          "id": 3,
+          "title": "Phonegap app for uzlist.com",
+          "image_thumb": "portfolio-images/thumbs/image03.jpg",
+          "image_big": "portfolio-images/image03-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["js", "angular","android", "ios"],
+          "projectUrl":"http://localhost:9091/"
+      },
+      {
+          "id": 4,
+          "title": "Libris Library Management System (Java)",
+          "image_thumb": "portfolio-images/thumbs/image04.jpg",
+          "image_big": "portfolio-images/image04-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["java", "mysql"],
+          "projectUrl":""
+      },
+      {
+          "id": 5,
+          "title": "C implementation of simple shell program",
+          "image_thumb": "portfolio-images/thumbs/image05.jpg",
+          "image_big": "portfolio-images/image05-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["cplus"],
+          "projectUrl":""
+      },
+       {
+          "id": 6,
+          "title": "System monitoring script in bash",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["bash"],
+          "projectUrl":""
+      },
+      {
+          "id": 7,
+          "title": "Sample Android Application",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["java", "android"],
+          "projectUrl":""
+      },
+      {
+          "id": 8,
+          "title": "Sample Android Application",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["java", "android"],
+          "projectUrl":""
+      },
+      {
+          "id": 9,
+          "title": "Online interface for FET timetable scheduling system",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["php", "mysql"],
+          "projectUrl":""
+      }
+]
