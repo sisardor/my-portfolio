@@ -1,6 +1,10 @@
-@media screen and (max-width: 600px) {
+
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 480px) {
+	
 	body {
-	    padding: 10px;
+
+	    padding: 5px;
 	    font: .9em Arial, Helvetica, sans-serif;
 	}
 
@@ -11,7 +15,7 @@
 	}
 
 	#header {
-	    padding: 5px 25px 0px 25px;
+	    padding: 5px 20px 0px 20px;
 	}
 
 	#block-top {
@@ -24,11 +28,11 @@
 	}
 
 	#content {
-	    padding: 30px 25px 30px 25px;
+	    padding: 30px 20px 30px 20px;
 	}
 
 	#footer {
-	    padding: 0px 25px 30px 25px;
+	    padding: 0px 20px 30px 20px;
 	}
 
 	#copyright {
@@ -55,16 +59,19 @@
 	}
 
 	#cv-2 #technical-skills ul.cv-section-items li span.topic {
-	    width: 370px;
+	    width: 270px;
 	}
+	ul.cv-section-items li.cv-item {
+		padding: 10px 5px;
+		}
 
 	ul.cv-section-items li.cv-item {
 	    padding: 10px 10px;
 	}
 
 	.divider, .divider2 {
-	    margin-left: -19px;
-	    margin-right: -25px;
+	    margin-left: -15px;
+	    margin-right: -20px;
 	}
 
 	.divider {
@@ -92,7 +99,7 @@
 
 	ul#nav li a,ul#nav {
 		padding-bottom: 15px;
-	    font-size: 18px;
+	    font-size: 16px;
 	}
 
 }
