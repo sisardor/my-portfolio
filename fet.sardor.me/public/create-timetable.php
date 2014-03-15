@@ -72,9 +72,11 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li><a href="panel.php">Home</a></li>
+				<li class="active"><a href="">Panel</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+				<li><a href="logout.php">Logout</a></li>
                
               </ul>
             </div>
@@ -92,15 +94,15 @@
 		<div class="row"><div class="center-block" style="width:400px"><h2 class="text-primary">Enter Timetable Information</h2></div></div>
 
 	
-		<div class="col-md-3">
-			<div class="btn-group-vertical">
-				<a href="panel.php"class="btn btn-primary" style="width:200px">Panel</a>
-		        <button class="btn btn-primary" style="width:200px">Data</button>
-		        <button class="btn btn-primary" style="width:200px">Constraints</button>
-		        <button class="btn btn-primary" style="width:200px">Generate Table</button>
-		        <button class="btn btn-primary" style="width:200px">Logout</button>
-		      </div>
-		</div>
+		<!-- <div class="col-md-3">
+					<div class="btn-group-vertical">
+						<a href="panel.php"class="btn btn-primary" style="width:200px">Panel</a>
+				        <button class="btn btn-primary" style="width:200px">Data</button>
+				        <button class="btn btn-primary" style="width:200px">Constraints</button>
+				        <button class="btn btn-primary" style="width:200px">Generate Table</button>
+				        <a href="logout.php" class="btn btn-primary" style="width:200px">Logout</a>
+				      </div>
+				</div> -->
 		<div class="col-md-9">
 			<legend>
 				<span class="text-muted">Institution:</span> 

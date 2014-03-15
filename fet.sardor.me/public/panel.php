@@ -5,7 +5,7 @@
   $result = $mysqli->query($query);
   $semester = "";
   while($tuple = $result->fetch_assoc()){
-    $semester .= "<option value=\"".$tuple['semester']."\">".$tuple['semester']."</option>";
+    $semester .= "<option  value=\"".$tuple['semester']."\">".$tuple['semester']."</option>";
   }
   $result->free();
 
@@ -54,11 +54,12 @@
     $semester = $_REQUEST['existSem'];
     $_SESSION['user']['semester'] = $semester;
     
-    $select = "SELECT user_table_id FROM user_tables WHERE semester = '".$semester."' AND user_name = '".$userID."'";
+    $select = "SELECT user_table_id, institution_name FROM user_tables WHERE semester = '".$semester."' AND user_name = '".$userID."'";
     $selectResult = $mysqli->query($select);
     $tableID = $selectResult->fetch_assoc();
     
     $_SESSION['user']['user_table_id'] = $tableID['user_table_id'];
+	$_SESSION['user']['institution'] = $tableID['institution_name'];
     
     $selectResult->free();
     
@@ -119,9 +120,11 @@
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Home</a></li>
+                <li class="active"><a href="">Home</a></li>
+				<li><a href="create-timetable.php">Panel</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#contact">Contact</a></li>
+				<li><a href="logout.php">Logout</a></li>
                
               </ul>
             </div>
@@ -165,7 +168,7 @@
             <div class="form-group">
               <label for="exampleInputEmail1">Semester:</label>
               <select class="form-control" name="existSem">
-                <option value="" selected=""></option>
+                <!-- <option value="" selected=""></option> -->
                 <?php echo $semester?>  
               </select>
             </div>

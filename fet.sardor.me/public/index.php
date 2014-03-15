@@ -1,4 +1,5 @@
 <?php
+
   //include 'php-scripts/is-valid-user.php';
   include 'php-scripts/db-connect.php';
   session_start();
@@ -20,6 +21,7 @@
     if ($count==1) {
       session_start();
       $_SESSION['user']['username'] = $id; 
+	  $_SESSION['user']['institution'] = ''; 
 
       header("Location: panel.php");
       exit;
