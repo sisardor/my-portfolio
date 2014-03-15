@@ -1,68 +1,95 @@
+<style>
+#HTC_ONE_portrait {
+background-image: url("portfolio-images/iphone2.png");
+width: 470px;
+height: 940px;
+}
+
+#frame_HTC_ONE_portrait {
+width: 369px;
+height: 630px;
+margin: 169px 0 0 -5px;
+}
+
+#phone_area {
+margin: 0 auto;
+text-align: center;
+display: none;
+position: relative;
+z-index: 1;
+}
+#portfolio h3 {
+font-size: 17px;
+}
+#portfolio h2 {
+font-size: 21px;
+}
+.col-3 p {
+	clear:both;
+}
+.col-2 h3 {
+	margin-top: 20px;
+}
+.description {
+	margin-bottom: 40px;
+}
+.description h4{
+	font-weight: bold;
+}
+
+
+</style>
 			<h2 class="title">Portfolio</h2>	
 			<div id="portfolio">
 			
 				<div class="portfolio-item col-1 fixed">
+				
+						<div class="slider-wrap-2">
+							<div class="slider-2" id="slide2">
+								<ul>				
+									<li ng-repeat="photo in project.gallery" on-finish-render>
+										<img ng-src="{{photo.src}}" width="678" height="312" alt="" />
+									</li>
+								</ul>
+							</div><!-- end .slider -->
+						</div><!-- end .slider-wrap -->	
+					
+				</div>
+				
+				<div class="portfolio-item col-1 fixed">
 					
 					<div class="col-2 float-left padded-right">
-						
-		
-						 <!-- slider container -->
-					    <div class=" slider">
-
-					        <!-- enumerate all photos -->
-					        <img ng-repeat="photo in photos" class="slide" ng-swipe-right="showPrev()" ng-swipe-left="showNext()" ng-show="isActive($index)" ng-src="{{photo.src}}" />
-
-					        <!-- prev / next controls -->
-					        <a class="arrow prev" href="" ng-click="showPrev()"></a>
-					        <a class="arrow next" href="" ng-click="showNext()"></a>
-
-					        <!-- extra navigation controls -->
-					        <!-- <ul class="nav">
-					            <li ng-repeat="photo in photos" ng-class="{'active':isActive($index)}">
-					                <img src="{{photo.src}}" alt="{{photo.desc}}" title="{{photo.desc}}" ng-click="showPhoto($index);" />
-					            </li>
-					        </ul> -->
-
-					    </div>
 
 						
-						<br />
-						
-						<h2>Lorem ipsum dolor</h2>
-						
-						<p>Etiam vitae justo ut <strong>felis ultrices</strong> placerat. Mauris dictum tellus ac dui
-						 bibendum at viverra augue iaculis. Praesent accumsan <em>purus</em> id ante tincidunt
-						 quis convallis. </p>
+						<h2 style="line-height: 120%;">{{project.title}}</h2>
+						<div class="description" ng-bind-html="project.description"></div>
 
-						 
-						<p>Duis auctor consequat turpis quis sagittis. Integer ultrices porttitor porttitor.
-						 Sed suscipit, turpis in dictum gravida, <a href="#">lorem purus hendrerit</a> metus, nec pulvinar
-						 nibh quam ac lectus. Vestibulum sit amet ullamcorper dolor. </p> 
-						 					
-						<p>Nullam porta lectus id libero tincidunt adipiscing. Fusce mollis tortor nec elit ornare
-						 iaculis non sit amet nibh. Nunc vel libero neque. Maecenas ligula magna, cursus id auctor
-						 id, tempor accumsan eros.</p>
-						 <div id="phone_area" style="display: block;"><div id="HTC_ONE_portrait"><iframe id="frame_HTC_ONE_portrait" src="http://uzblog.com/#/browse/realestate/apartment" style="background-color: rgb(255, 255, 255);"></iframe></div></div>
+						<div ng-if=" project.projectUrl!='' " id="phone_area" style="display: block;">
+							<div id="HTC_ONE_portrait">
+								<iframe id="frame_HTC_ONE_portrait" ng-src="{{currentProjectUrl}}" style="background-color: rgb(255, 255, 255);"></iframe>
+							</div>
+						</div>
 
 					</div>
-					<div class="col-3 float-right" ng-bind-html="projectDetails">
-						
-						<!-- <br />
-						
-						<p><strong>Project Details:</strong></p>
-						
-						<ul>
-							<li>Donec imperdiet nunc</li>
-							<li>Id felis faucibus eu tempor</li>
-							<li>Sem tincidunt fusce a orci in</li>
-							<li>Risus ultrices pharetra</li>
-						</ul>
-						
-						<p><strong>Live preview:</strong>
-						   <br /><a href="#">www.sitelink.com</a></p> -->			
-						
-					</div>
+					<div class="col-3 float-left" ng-bind-html="project.details"></div>
+
 					
 				</div><!-- end .portfolio-item -->
 			
-			</div><!-- end #portfolio -->	
+			</div><!-- end #portfolio -->
+<script type="text/javascript">
+      
+		$(document).ready(function(){
+
+			// easy slider
+			// font replacement
+			// if ( ! ( $.browser.msie & ($.browser.version == 6) ) )
+			// { 	
+			// 	$("h1#name").css({'font-size':'46px', 'padding-top':'20px' , 'margin-bottom':'0px' });
+			// 	Cufon.replace('#portfolio h2, h2.cv-section-name, h1#name, h2.title'); // using cufon with IE6 breaks the layout in some cases
+				
+			// }	
+		
+		});
+			
+	</script> 

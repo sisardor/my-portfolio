@@ -13,10 +13,13 @@
 	
 	<!-- //////// Favicon ////////  -->
 	<link rel="shortcut icon" type="image/x-icon" href="favicon.ico"  />
+	<!-- //////// Font StyleSheets ////////  -->
+	<link href="_layout/fonts/stylesheet.css" rel="stylesheet" type="text/css" />
 	
 	<!-- //////// Css StyleSheets ////////  -->
-	<link href="_layout/style.css"       rel="stylesheet" type="text/css" media="all"   />
+	<link href="_layout/style.css"      rel="stylesheet" media="all" />
 	<link href="_layout/style-print.css" rel="stylesheet" type="text/css" media="print" />	
+	<link href="_layout/mobile-card.css"       rel="stylesheet" media="all"  />
 </head>
 <body>
 	
@@ -273,9 +276,9 @@ Technology Summary:<br/>
 		<div id="footer" class="fixed">
 			
 			<div class="divider2"></div>
-			
-			<p id="copyright">&copy; 2014 Sardor Isakov. All rights reserved.</p>
 			<a href="#" id="top">&#710; Top</a>
+			<p id="copyright">&copy; 2014 Sardor Isakov. All rights reserved.</p>
+			
 			
 		</div><!-- end #footer -->
 		
@@ -294,30 +297,27 @@ Technology Summary:<br/>
 		</script>
 	<![endif]-->
 	
-	<!-- //////// Cufon Font Replacement ////////  -->
-	<script type="text/javascript" src="_layout/js/cufon/cufon-yui.js"></script>
-	<script type="text/javascript" src="_layout/js/cufon/hattori_hanzo.font.js"></script>
 
 	<!-- //////// Tipsy - custom Tooltips ////////  -->
 	<link rel="stylesheet" type="text/css" href="_layout/js/tipsy/css.tipsy.css" />
 	<script type="text/javascript" src="_layout/js/tipsy/jquery.tipsy.js"></script>
 
 	<!-- //////// PrettyPhoto ////////  -->
-	<link rel="stylesheet" type="text/css" href="_layout/js/prettyphoto/css.prettyPhoto.css" />
-	<script type="text/javascript" src="_layout/js/prettyphoto/jquery.prettyPhoto.js"></script>
+	<link href="_layout/js/prettyphoto.v2/prettyPhoto.css" rel="stylesheet" type="text/css" />
+	<script type="text/javascript" src="_layout/js/prettyphoto.v2/jquery.prettyPhoto.js"></script>
 	
 	<!-- //////// Customs JS  ////////  -->	
 	<script type="text/javascript">
 	/* <![CDATA[ */	                                         
 		$(document).ready(function(){
 		
-			// font replacement
-			if ( ! ( $.browser.msie & ($.browser.version == 6) ) )
-			{ 	
-				$("h1#name").css({'font-size':'46px', 'padding-top':'20px' , 'margin-bottom':'0px' });
-				Cufon.replace('#portfolio h2, h2.cv-section-name, h1#name'); // using cufon with IE6 breaks the layout in some cases
+			// // font replacement
+			// if ( ! ( $.browser.msie & ($.browser.version == 6) ) )
+			// { 	
+			// 	$("h1#name").css({'font-size':'46px', 'padding-top':'20px' , 'margin-bottom':'0px' });
+			// 	Cufon.replace('#portfolio h2, h2.cv-section-name, h1#name'); // using cufon with IE6 breaks the layout in some cases
 				
-			}	
+			// }	
 			
 			// tooltips
 			$('.tip').tipsy({gravity: 'e'});	//  apply class .tip to any <a> tag to make it's  title be displayed like a tooltip
@@ -334,7 +334,7 @@ Technology Summary:<br/>
 		});	
 	/* ]]> */		
 	</script>
-	<script type="text/javascript"> Cufon.now(); </script>
+	<script type="text/javascript"> //Cufon.now(); </script>
 
 	<!-- analytics code here -->
 

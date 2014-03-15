@@ -12,20 +12,111 @@
       <li><button class="button" ng-click="setSelectedTitle('mysql')" ng-model="checkModel.mysql" btn-checkbox>MySQL</button></li>
       <li><button class="button" ng-click="setSelectedTitle('android')" ng-model="checkModel.android" btn-checkbox>Android</button></li>
       <li><button class="button" ng-click="setSelectedTitle('ios')" ng-model="checkModel.ios" btn-checkbox>iOS</button></li>
+      <li><button class="button" ng-click="setSelectedTitle('bash')" ng-model="checkModel.ios" btn-checkbox>Bash</button></li>
    </ul>
 </div>
 <br>
-<div id="portfolio" class="fixed">
-   <div ng-repeat="item in projects" class="portfolio-item col-3 float-left padded-right">
-      <a href="_content/640x550-placeholder.jpg" class="bordered" rel="prettyPhoto[portfolio]">
-      <img ng-src="{{item.image}}" width="216" height="141" alt="" />					
-      </a>
-      <br />
-      <h2>{{item.title}}</h2>
-      <p>{{item.description}} <br><span ng-bind-html="item.link"></span></p>
-      <p><a ng-href="#/project/{{item.id}}" class="read-more">Read More</a></p>
-   </div>
-   <!-- end .portfolio-item -->
+<!--  sdf sdf
+   <a title="Video" href="" rel="prettyPhoto" class="zoom" style=""></a>
+   <a href="" title="Video" class="link" style=""></a>
+  -->
+<style>
+
+.masonry,
+.masonry li { /* apply before masonry add class */
+    position: absolute; /* important to add it before enter animation start */
+    
+    -webkit-transition-duration: .7s;
+    transition-duration: .7s;
+    
+    -webkit-transition-property: all;
+    transition-property: all;
+}
+
+.masonry .masonry-enter { /* limit animated properties for entering elements */
+    -webkit-transition-property: -webkit-transform, opacity;
+    transition-property: transform, opacity;
+}
+
+.masonry-enter,
+.masonry-leave.masonry-leave-active {
+    opacity: 0;
+    -webkit-transform: scale(0.1);
+    transform: scale(0.1);
+}
+
+.masonry-leave,
+.masonry-enter.masonry-enter-active {
+    opacity: 1;
+    -webkit-transform: scale(1);
+    transform: scale(1);
+}
+.grid {
+    border: solid 1px #ccc padding: 10px 10px 0 0;
+}
+.grid li {
+    display: inline-block;
+    width: 100px;
+    height: 100px;
+    border: solid 1px #ccc;
+    margin: 0 0 10px 10px;
+    background: #eee;
+}
+
+</style>
+
+<!-- <input type="button" ng-click="buttonC()" value="randomize"><div class="image-overlay">
+<ul id="list" ng-style="{height: ((myList.length * 90) + 'px')}">
+   <li ng-repeat="item in myList" ng-style="{top: ((item.row * 90) + 'px'), left: ((item.column * 90) + 'px')}">
+      {{$index}} - {{item.order}}. {{item.text}}
+   </li>
+</ul>
+</div> -->
+<!-- <input type="text" ng-model="nameFilter" />
+    <a href="#" ng-click="order = 'id'">Order by id</a>
+    <a href="#" ng-click="order = 'name'">Order by name</a>
+    <a href="#" ng-click="order = 'age'">Order by age</a>
+ <ul class="grid" masonry="true">
+        <li ng-repeat="item in items | filter: { name: nameFilter } | orderBy: order">
+            <span>{{item.name}}</span>
+            <br /> <span>Age: {{item.age}}</span>
+            <br /> <span>Company: {{item.company}}</span>
+        </li>
+</ul> -->
+<ul id="portfolio" class="fixed" >
+   <li ng-repeat="item in projects">
+      <div ng-class="{hover:item.viewing}" id="flip-toggle2" class="flip-container" ontouchstart="this.classList.toggle('hover');">
+         <div class="flipper">
+            <div class="front">
+               <!-- <div class="info" ng-click="toggleThis(item.id)"><i class="fa fa-info-circle"></i></div> -->
+                   <div class="image-box">
+
+                     <a  href="" ng-click="showImageDialog(item.id)" class="" rel="prettyPhoto[portfolio]">
+                        <img onload="this.style.opacity='1';" ng-src="{{item.image_thumb}}" width="216" height="141" alt="" />
+                        <a title="Video" href="" ng-click="showImageDialog(item.id)" rel="" class="zoom" style=""></a>
+                        <a ng-href="#/project/{{item.id}}" title="Video" class="link" style=""></a>               
+                     </a>
+                     
+                  </div>
+                   <div class="detail">
+                     <div class="title"><a ng-href="#/project/{{item.id}}"  >{{item.title}}</a></div>
+                     <div class="body">
+                     </div>
+                     <div class="tags">
+                       <a ng-repeat="t in item.tech" href="" title="Love it" class="btn" data-count="0"> {{t}}</a>
+                     </div>
+                   </div>
+            </div>
+            <div class="back">
+               <div class="info" ng-click="closeDisplay(item.id)"><i class="fa fa-times-circle"></i></div>
+               fsdf sd
+            </div>
+         </div>
+      </div> 
+   </li>
+</ul>   
+
+<!-- end .portfolio-item -->
    <div class="portfolio-pagination col-1 clear">
       <ul>
          <!-- <li><a href="#">&laquo; Prev</a></li> -->
@@ -33,6 +124,5 @@
          <!-- <li><a href="#/page/1">Next &raquo;</a></li> -->
       </ul>
    </div>
-   <!-- end portfolio-pagination -->		
-</div>
+   <!-- end portfolio-pagination -->   
 <!-- end #portfolio -->
