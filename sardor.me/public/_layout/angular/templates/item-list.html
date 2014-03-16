@@ -16,10 +16,7 @@
    </ul>
 </div>
 <br>
-<!--  sdf sdf
-   <a title="Video" href="" rel="prettyPhoto" class="zoom" style=""></a>
-   <a href="" title="Video" class="link" style=""></a>
-  -->
+
 <style>
 
 .masonry,
@@ -63,26 +60,10 @@
     background: #eee;
 }
 
+
 </style>
 
-<!-- <input type="button" ng-click="buttonC()" value="randomize"><div class="image-overlay">
-<ul id="list" ng-style="{height: ((myList.length * 90) + 'px')}">
-   <li ng-repeat="item in myList" ng-style="{top: ((item.row * 90) + 'px'), left: ((item.column * 90) + 'px')}">
-      {{$index}} - {{item.order}}. {{item.text}}
-   </li>
-</ul>
-</div> -->
-<!-- <input type="text" ng-model="nameFilter" />
-    <a href="#" ng-click="order = 'id'">Order by id</a>
-    <a href="#" ng-click="order = 'name'">Order by name</a>
-    <a href="#" ng-click="order = 'age'">Order by age</a>
- <ul class="grid" masonry="true">
-        <li ng-repeat="item in items | filter: { name: nameFilter } | orderBy: order">
-            <span>{{item.name}}</span>
-            <br /> <span>Age: {{item.age}}</span>
-            <br /> <span>Company: {{item.company}}</span>
-        </li>
-</ul> -->
+
 <ul id="portfolio" class="fixed" >
    <li ng-repeat="item in projects">
       <div ng-class="{hover:item.viewing}" id="flip-toggle2" class="flip-container" ontouchstart="this.classList.toggle('hover');">

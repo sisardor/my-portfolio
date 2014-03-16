@@ -108,6 +108,38 @@
 
 
 
+.back {
+  display: none;
+}
+#portfolio li {
+  /*height:200px;*/
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  padding: 10px;
+}
+.front .image-box{
+  margin: 0 auto;
+  width:280px;
+
+}
+.image-box img { 
+  width: 280px;
+  height: auto;
+
+ 
+}
+.detail {
+  padding: 10px 0;
+}
+.detail a {
+  text-decoration: none;
+
+}
+
+.tags {
+  display: none;
+}
+
 
 
 
