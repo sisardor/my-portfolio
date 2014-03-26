@@ -108,39 +108,31 @@
 
 
 
-.back {
+/*.back {
   display: none;
 }
 #portfolio li {
-  /*height:200px;*/
   margin-bottom: 10px;
   border: 1px solid #ccc;
   padding: 10px;
 }
-.front .image-box{
+#portfolio .front .image-box{
   margin: 0 auto;
   width:280px;
-
 }
-.image-box img { 
+#portfolio .image-box img { 
   width: 280px;
   height: auto;
-
- 
 }
-.detail {
+#portfolio .detail {
   padding: 10px 0;
 }
-.detail a {
+#portfolio .detail a {
   text-decoration: none;
-
 }
-
-.tags {
+#portfolio .tags {
   display: none;
-}
-
-
+}*/
 
 
 
