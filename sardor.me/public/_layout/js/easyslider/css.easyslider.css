@@ -8,12 +8,12 @@
 
 /* wider slider */
 
-.slider-wrap-2{ position:relative; border:1px solid #e1e1e1; padding:10px; z-index:99; width:678px; height:312px; overflow:hidden !important;  }
+.slider-wrap-2{ position:relative; border:1px solid #e1e1e1; padding:10px; z-index:99; width:678px; height:350px; overflow:hidden !important;  }
 
 .slider-2 ul, .slider-2 li{ margin:0; padding:0; list-style:none; cursor:default; }
 
 /* define width and height of list item (slide)entire slider area will adjust according to the parameters provided here*/ 
-.slider-2 li{ width:678px; height:312px; overflow:hidden; }
+.slider-2 li{ width:678px; height:350px; overflow:hidden; }
 
 
 /* numeric controls */
