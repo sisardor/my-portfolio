@@ -1,0 +1,21 @@
+{
+   "id":5,
+   "title":"C implementation of simple shell program",
+   "description":"<p>C implementation of simple shell program. Program is writted in C.</p><p>Source code for this application is found here <a href=\"https://github.com/sisardor/my-portfolio/tree/master/source_codes/cpsc2280/Simple_Shell_C\">github link</a></p><h3>Installation:</h3> <h4>Included Files</h4><p>My assignment solution consists of the following files: </p><ul> <li>minishell.c</li> <li>minishell.h</li> <li>minishellfunc.h </li> <li>makefile </li></ul><h4>Install as following:</h4> <p>You can run this program as follows (run from command line): <br> <pre>$ make run</pre> </p><h4>Compiler:</h4> <p><pre>gcc version 4.6.3 (Ubuntu/Linaro 4.6.3-1ubuntu5)</pre></p><h4>Errors/Bugs:</h4><p>One error I can not fix/find is that sometime you have to type \"quit\" 2 time to quitat it gives no result, after you type \"quit\" second time minishell quits, this is minor bug, but it is still there</p>",
+   "details":"<p><strong>Project Details:</strong></p><ul> <li>Handles regular shell commands</li> <li>Handles background jobs</li> <li><a href=\"https://github.com/sisardor/my-portfolio/tree/master/source_codes/cpsc2280/Simple_Shell_C\" target=\"_blank\">Source Code - Github</a></li></ul>",
+   "image_thumb":"portfolio-images/thumbs/image01.jpg",
+   "image_big":"portfolio-images/image01-640x550.jpg",
+   "link":"<code>HTML</code>",
+   "tech":[
+      "js",
+      "angular",
+      "mongodb"
+   ],
+   "projectUrl":"",
+   "gallery":[
+      {
+         "src":"portfolio-images/demo5/simple_shell.gif",
+         "desc":"Image 01"
+      }
+   ]
+}

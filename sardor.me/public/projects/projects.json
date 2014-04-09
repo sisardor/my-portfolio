@@ -11,7 +11,7 @@
       {
           "id": 2,
           "title": "Uzlist.com REST APIs based on Node.js",
-          "image_thumb": "portfolio-images/thumbs/image02.jpg",
+          "image_thumb": "portfolio-images/demo2/img01.jpg",
           "image_big": "portfolio-images/image02-640x550.jpg",
           "link": "<code>HTML</code>",
           "tech": ["php","nodejs", "api"],
@@ -29,8 +29,8 @@
       {
           "id": 4,
           "title": "Libris Library Management System (Java)",
-          "image_thumb": "portfolio-images/thumbs/image04.jpg",
-          "image_big": "portfolio-images/image04-640x550.jpg",
+          "image_thumb": "portfolio-images/demo4/thumb.png",
+          "image_big": "portfolio-images/demo4/img01.png",
           "link": "<code>HTML</code>",
           "tech": ["java", "mysql"],
           "projectUrl":""
@@ -38,8 +38,8 @@
       {
           "id": 5,
           "title": "C implementation of simple shell program",
-          "image_thumb": "portfolio-images/thumbs/image05.jpg",
-          "image_big": "portfolio-images/image05-640x550.jpg",
+          "image_thumb": "portfolio-images/demo5/shell_icon.jpg",
+          "image_big": "portfolio-images/demo5/simple_shell.gif",
           "link": "<code>HTML</code>",
           "tech": ["cplus"],
           "projectUrl":""
@@ -47,8 +47,8 @@
        {
           "id": 6,
           "title": "System monitoring script in bash",
-          "image_thumb": "portfolio-images/thumbs/image06.jpg",
-          "image_big": "portfolio-images/image06-640x550.jpg",
+          "image_thumb": "portfolio-images/demo6/thumb.jpg",
+          "image_big": "portfolio-images/demo6/sys_monitor.gif",
           "link": "<code>HTML</code>",
           "tech": ["bash"],
           "projectUrl":""
@@ -56,8 +56,8 @@
       {
           "id": 7,
           "title": "Sample Android Application",
-          "image_thumb": "portfolio-images/demo4/thumb.jpg",
-          "image_big": "portfolio-images/demo4/img01.jpg",
+          "image_thumb": "portfolio-images/demo7/thumb.jpg",
+          "image_big": "portfolio-images/demo7/img01.jpg",
           "link": "<code>HTML</code>",
           "tech": ["java", "android"],
           "projectUrl":""

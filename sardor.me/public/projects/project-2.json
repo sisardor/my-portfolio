@@ -20,18 +20,6 @@
       {
          "src":"portfolio-images/single/02.jpg",
          "desc":"Image 02"
-      },
-      {
-         "src":"portfolio-images/single/03.jpg",
-         "desc":"Image 03"
-      },
-      {
-         "src":"portfolio-images/single/04.jpg",
-         "desc":"Image 04"
-      },
-      {
-         "src":"portfolio-images/single/05.jpg",
-         "desc":"Image 05"
       }
    ]
 }
