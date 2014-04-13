@@ -1,0 +1,21 @@
+{
+   "id":8,
+   "title":"Online interface for FET timetable scheduling system",
+   "description":"<p>FET is open source free software for automatically scheduling the timetable of a school, high-school or university. It uses a fast and efficient timetabling algorithm. It is licensed under GNU GPL.</p><p>This app is online interface for FET Free Timetabling Software, user can register and create working table. User can enter all informations online and create timetable. </p><br><br><br><br><img src=\"portfolio-images/demo8/fet_img01.gif\">",
+   "details":"<p><strong>Project Details:</strong></p><ul><li><a href=\"http://demo2.sardor.me\" target=\"_blank\">Live example</a></li>  <li>Username: <strong>user</strong></li><li>Password: <strong>password</strong></li> <li>Source code <a href=\"https://github.com/sisardor/my-portfolio/tree/master/source_codes/php/FET-scheduling-system\" target=\"_blank\">on Github<a></li></ul>",
+   "image_thumb":"portfolio-images/thumbs/image01.jpg",
+   "image_big":"portfolio-images/image01-640x550.jpg",
+   "link":"<code>HTML</code>",
+   "tech":[
+      "js",
+      "angular",
+      "mongodb"
+   ],
+   "projectUrl":"http://demo1.sardor.me/",
+   "gallery":[
+      {
+         "src":"portfolio-images/demo8/uzlist_img01.jpg",
+         "desc":"Image 01"
+      }
+   ]
+}

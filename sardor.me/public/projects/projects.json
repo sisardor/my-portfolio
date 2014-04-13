@@ -55,29 +55,30 @@
       },
       {
           "id": 7,
-          "title": "Sample Android Application",
+          "title": "Content Management System, uzlist.com",
           "image_thumb": "portfolio-images/demo7/thumb.jpg",
           "image_big": "portfolio-images/demo7/img01.jpg",
           "link": "<code>HTML</code>",
           "tech": ["java", "android"],
           "projectUrl":""
-      },
+      }, 
       {
           "id": 8,
-          "title": "Sample Android Application",
-          "image_thumb": "portfolio-images/thumbs/image06.jpg",
-          "image_big": "portfolio-images/image06-640x550.jpg",
-          "link": "<code>HTML</code>",
-          "tech": ["java", "android"],
-          "projectUrl":""
-      },
-      {
-          "id": 9,
           "title": "Online interface for FET timetable scheduling system",
           "image_thumb": "portfolio-images/thumbs/image06.jpg",
           "image_big": "portfolio-images/image06-640x550.jpg",
           "link": "<code>HTML</code>",
           "tech": ["php", "mysql"],
           "projectUrl":""
+      },
+      {
+          "id": 9,
+          "title": "Sample Android Application",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["java", "android"],
+          "projectUrl":""
       }
+     
 ]

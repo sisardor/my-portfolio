@@ -1,8 +1,8 @@
 {
    "id":7,
-   "title":"Libris Library Management System (Java)",
-   "description":"<p>Libris Library Management System (LMS) is client-server application written in java programming language. LMS was a major term project for software engineering course at Langara. It was built in 2 months, developed by a team of students.</p><p>This application is further documented on our official <a href=\"https://github.com/sisardor/LMS-java-implementation\">Software Design Document</a> (SDD)</p><h3>Installation:</h3><h4>Libris Client:</h4><p>Installation Instructions for the Libris Client Program</p><ol><li>Copy the installation folder onto your computer's hard drive</li><li>Open command prompt and navigate to the installation directory.</li><li>Run the following: javaw -jar libris_client.jar.</li></ol><h4>Libris Server:</h4><p>Installation Instructions for Libris Server Program<br><ol><li>Ensure MySQL Server version 5.5 or greater is installed.</li><li>MySQL database run this: <strong>mysql -u “username” -p”password”  build_librisdb.sql</strong></li><li>Run “java -jar libris_server.jar” for the first time. It will probably shut itself down but that is OK. It created a file under config/server.config to edit.</li><li>Open the file config/server.config and edit it to the desired settings. Namely the db_dbusername and db_password settings. There is a description of each setting in the Server Settings section below.</li><li>The server will create a default administrator account with a user ID of 1 and password “libris”. This account should be used to create administrator accounts and then be disabled.</li></ol><h4>How To Run the Libris Server Program</h4><ol><li>Open the operating system’s command prompt and navigate to the installation directory.</li><li>Run the following command: java -jar libris_server.jar</li></ol>",
-   "details":"<p><strong>Project Details:</strong></p><ul> <li>Client-server application</li> <li>Java socket connection</li> <li>Java DBMS with Mysql</li> <li>User login, registration</li> <li>Create, update, delete items</li> <li>Automatic email sending</li> <li>Perform database search</li> <li><a href=\"https://github.com/sisardor/LMS-java-implementation\" target=\"_blank\">Source Code - Github</a></li></ul>",
+   "title":"Content Management System, uzlist.com",
+   "description":"<p>Uzlist.com is a classifieds website, Content managment system (CMS), it allows publishing, editing and modifying content as well as maintenance from a central interface. Website was lunched in September, 2013. Web app is in Russian langauge and it is intended for Russia and Russian speaking countries.</p><p>Uzlist.com is written in 100% Angularjs and raw JavaScript, it utilises API.</p>",
+   "details":"<p><strong>Project Details:</strong></p><ul><li>Client-server application</li><li>Create, edit, delete content</li><li>Image upload, add image to the content</li><li>User login, registration</li><li>Automatic email sending</li><li>Perform database search</li><li><a href=\"http://uzlist.com\" target=\"_blank\">Live example</a></li><li>Source code available upon request</li></ul>",
    "image_thumb":"portfolio-images/thumbs/image01.jpg",
    "image_big":"portfolio-images/image01-640x550.jpg",
    "link":"<code>HTML</code>",
@@ -14,7 +14,23 @@
    "projectUrl":"",
    "gallery":[
       {
-         "src":"portfolio-images/demo5/sys_monitor.gif",
+         "src":"portfolio-images/demo7/uzlist_img01.jpg",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/demo7/uzlist_img02.jpg",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/demo7/uzlist_img03.jpg",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/demo7/uzlist_img04.jpg",
+         "desc":"Image 01"
+      },
+       {
+         "src":"portfolio-images/demo7/uzlist_img05.jpg",
          "desc":"Image 01"
       }
    ]
