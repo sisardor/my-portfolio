@@ -1,0 +1,14 @@
+{
+   "id":10,
+   "title":"Sample single page application without framework",
+   "description":"<p>SPA without javascript framework, app displays products in categories</p><p>Live example: <a href=\"http://spa.sardor.me/\" target=\"_blank\">http://spa.sardor.me/</a></p><h3>Installation:</h3><p>To install this app, you need to clone this project from github - <a href=\"https://github.com/sisardor/spa-demo-without-framework\" target=\"_blank\">here is link</a>:<br></p>",
+   "details":"<p><strong>Project Details:</strong></p><ul><li><a href=\"https://github.com/sisardor/spa-demo-without-framework\" target=\"_blank\">Source Code - Github</a></li></ul><p><br><strong>Live preview:</strong><br /><a href=\"http://spa.sardor.me\" target=\"_blank\">spa.sardor.me</a></p>",
+   "image_thumb":"portfolio-images/thumbs/image01.jpg",
+   "image_big":"portfolio-images/image01-640x550.jpg",
+   "link":"<code>HTML</code>",
+   "tech":[
+      "js"
+   ],
+   "projectUrl":"http://spa.sardor.me/",
+   "gallery":[ ]
+}
