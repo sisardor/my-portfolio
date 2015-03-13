@@ -70,5 +70,23 @@
           "link": "<code>HTML</code>",
           "tech": ["php", "mysql"],
           "projectUrl":""
+      },
+      {
+          "id": 9,
+          "title": "Sample Android Application",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["java", "android"],
+          "projectUrl":""
+      },
+      {
+          "id": 10,
+          "title": "Single Page Application",
+          "image_thumb": "portfolio-images/thumbs/image06.jpg",
+          "image_big": "portfolio-images/image06-640x550.jpg",
+          "link": "<code>HTML</code>",
+          "tech": ["js"],
+          "projectUrl":""
       }
 ]
