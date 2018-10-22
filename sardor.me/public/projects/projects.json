@@ -2,8 +2,8 @@
     {
          "id": 0,
          "title": "Asset managment system",
-         "image_thumb": "portfolio-images/demo1/thumb.jpg",
-         "image_big": "portfolio-images/demo1/showcaseImg.jpg",
+         "image_thumb": "portfolio-images/image_geo.jpg",
+         "image_big": "portfolio-images/image_geo.jpg",
          "link": "<code>HTML</code>",
          "tech": ["js", "reactjs", "mongodb"],
          "projectUrl":"http://localhost:9092/"
