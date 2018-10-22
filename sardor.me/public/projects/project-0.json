@@ -1,0 +1,32 @@
+{
+   "id":3,
+   "title":"Asset managment and tracking system in Reactjs",
+   "description":"Asset Tracking system. System allows you to create new project, and import tasks and assets from spreadsheet. ",
+   "image_thumb":"portfolio-images/thumbs/image01.jpg",
+   "image_big":"portfolio-images/image01-640x550.jpg",
+   "link":"<code>HTML</code>",
+   "tech":[
+      "js",
+      "angular",
+      "mongodb"
+   ],
+   "projectUrl":"http://demo1.sardor.me/",
+   "gallery":[
+      {
+         "src":"portfolio-images/demo1/img74.gif",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/demo1/img75.gif",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/demo1/img71.jpg",
+         "desc":"Image 01"
+      },
+      {
+         "src":"portfolio-images/demo1/img72.jpg",
+         "desc":"Image 02"
+      }
+   ]
+}

@@ -1,4 +1,13 @@
 [
+    {
+         "id": 0,
+         "title": "Asset managment system",
+         "image_thumb": "portfolio-images/demo1/thumb.jpg",
+         "image_big": "portfolio-images/demo1/showcaseImg.jpg",
+         "link": "<code>HTML</code>",
+         "tech": ["js", "reactjs", "mongodb"],
+         "projectUrl":"http://localhost:9092/"
+     },
      {
           "id": 1,
           "title": "Sample application with Angular, Firebase, and MongoDB",
@@ -61,7 +70,7 @@
           "link": "<code>HTML</code>",
           "tech": ["java", "android"],
           "projectUrl":""
-      }, 
+      },
       {
           "id": 8,
           "title": "Online interface for FET timetable scheduling system",

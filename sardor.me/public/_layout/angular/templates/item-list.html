@@ -1,6 +1,7 @@
 <h2 class="title">Portfolio</h2>
 <div >
    <ul class="button-group">
+     <li><button class="button" ng-click="setSelectedTitle('reactjs')" ng-model="checkModel.js" btn-checkbox>Reactjs</button></li>
       <li><button class="button" ng-click="setSelectedTitle('js')" ng-model="checkModel.js" btn-checkbox>JavaScript</button></li>
       <li><button class="button" ng-click="setSelectedTitle('php')" ng-model="checkModel.php" btn-checkbox>PHP</button></li>
       <li><button class="button" ng-click="setSelectedTitle('angular')" ng-model="checkModel.angular" btn-checkbox>Angularjs</button></li>
@@ -11,7 +12,7 @@
       <li><button class="button" ng-click="setSelectedTitle('ror')" ng-model="checkModel.ror" btn-checkbox>ROR</button></li>
       <li><button class="button" ng-click="setSelectedTitle('mysql')" ng-model="checkModel.mysql" btn-checkbox>MySQL</button></li>
       <li><button class="button" ng-click="setSelectedTitle('android')" ng-model="checkModel.android" btn-checkbox>Android</button></li>
-      <li><button class="button" ng-click="setSelectedTitle('ios')" ng-model="checkModel.ios" btn-checkbox>iOS</button></li>
+      <!-- <li><button class="button" ng-click="setSelectedTitle('ios')" ng-model="checkModel.ios" btn-checkbox>iOS</button></li> -->
       <li><button class="button" ng-click="setSelectedTitle('bash')" ng-model="checkModel.ios" btn-checkbox>Bash</button></li>
    </ul>
 </div>
@@ -22,10 +23,10 @@
 .masonry,
 .masonry li { /* apply before masonry add class */
     position: absolute; /* important to add it before enter animation start */
-    
+
     -webkit-transition-duration: .7s;
     transition-duration: .7s;
-    
+
     -webkit-transition-property: all;
     transition-property: all;
 }
@@ -75,9 +76,9 @@
                      <a  href="" ng-click="showImageDialog(item.id)" class="" rel="prettyPhoto[portfolio]">
                         <img onload="this.style.opacity='1';" ng-src="{{item.image_thumb}}" width="216" height="141" alt="" />
                         <a title="Video" href="" ng-click="showImageDialog(item.id)" rel="" class="zoom" style=""></a>
-                        <a ng-href="#/project/{{item.id}}" title="Video" class="link" style=""></a>               
+                        <a ng-href="#/project/{{item.id}}" title="Video" class="link" style=""></a>
                      </a>
-                     
+
                   </div>
                    <div class="detail">
                      <div class="title"><a ng-href="#/project/{{item.id}}"  >{{item.title}}</a></div>
@@ -93,9 +94,9 @@
                fsdf sd
             </div>
          </div>
-      </div> 
+      </div>
    </li>
-</ul>   
+</ul>
 
 <!-- end .portfolio-item -->
    <div class="portfolio-pagination col-1 clear">
@@ -105,5 +106,5 @@
          <!-- <li><a href="#/page/1">Next &raquo;</a></li> -->
       </ul>
    </div>
-   <!-- end portfolio-pagination -->   
+   <!-- end portfolio-pagination -->
 <!-- end #portfolio -->

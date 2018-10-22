@@ -26,12 +26,12 @@
         autoplay_slideshow: false,
         deeplinking: false
       });
-      
+
     }])
   .controller('GlobalCTRL', ['$scope','$http', 'mainInfo', function( $scope, $http,mainInfo ) {
-     
+
   }])
-  .factory('mainInfo', function($http) { 
+  .factory('mainInfo', function($http) {
     return $http.get('projects/projects.json');
   })
   .controller('MainCTRL', ['$scope', '$route', '$http', 'Projects', '$timeout','mainInfo',
@@ -45,21 +45,21 @@
       var currentPage = $route.current.params.num || 1;
 
 
-      // 
-     
-      mainInfo.success(function(data) { 
-        jsonData = data; 
+      //
+
+      mainInfo.success(function(data) {
+        jsonData = data;
         var div = ~~ (data.length / itemPerPage);
         var rem = data.length % itemPerPage;
         var totalPages = div + (rem ? 1 : 0);
-        
+
 
         for (var i = 1; i < totalPages + 1; i++) {
           $scope.pagination.push({
             page: i
           });
         };
-        
+
 
         var ii = currentPage * itemPerPage;
         for (var i = ii - itemPerPage; i < ii; i++) {
@@ -69,7 +69,7 @@
           $scope.projects.push(data[i])
         };
 
-      }); 
+      });
 
       $scope.currentPage = function (num) {
         return (num == currentPage);
@@ -88,6 +88,7 @@
         api: false,
         ror: false,
         mysql: false,
+        reactjs: false,
         android: false,
         ios: false,
         bash: false
@@ -191,7 +192,7 @@
           $scope.checkModel[entry] = true;
         });
       }
-     
+
       for (var i = 0; i < $scope.projects.length; i++) {
         api_gallery.push(jsonData[i].image_big);
         api_titles.push(jsonData[i].title);
@@ -316,7 +317,7 @@
       $scope.$on('ngRepeatFinished', function (ngRepeatFinishedEvent) {
         console.log("ngRepeatFinished ------------ ");
         $("#slide2").easySlider({
-          auto: true, 
+          auto: true,
           continuous: false,
           speed: 1000,
           controlsShow: true,
@@ -371,7 +372,7 @@
   }])
   .factory('Projects', function () {
       var options = [];
-      
+
       return {
         optionSelected: function (val) {
           options = val;
