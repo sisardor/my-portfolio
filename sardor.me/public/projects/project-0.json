@@ -1,7 +1,7 @@
 {
    "id":3,
    "title":"Asset managment and tracking system in Reactjs",
-   "description":"<p>Asset Tracking system. System allows you to create new project, and import tasks and assets from spreadsheet.</p><h3> Spreadsheet importing tool:</h3> <img src=\"portfolio-images/Demo2.gif\" width=\"678\"><br/><h3> Project tree view:</h3> <img src=\"portfolio-images/Demo1.gif\" width=\"678\"><br/>",
+   "description":"<p>Asset Tracking system. System allows you to create new project, and import tasks and assets from spreadsheet.<p> <h3><br/>DEMO - <a href=\"http://atomex.io:8888/login\" target=\"_blank\"> http://atomex.io:8888/login </a> <br/>Username: demo<br/>Password: demo</h3><h3> Spreadsheet importing tool:</h3> <img src=\"portfolio-images/Demo2.gif\" width=\"678\"><br/><h3> Project tree view:</h3> <img src=\"portfolio-images/Demo1.gif\" width=\"678\"><br/>",
    "image_thumb":"portfolio-images/image_geo.jpg",
    "image_big":"portfolio-images/image_geo.jpg",
    "link":"<code>HTML</code>",
